@@ -32,7 +32,7 @@
 
 ## Weekend Reflections
 
-#### Did you meet all of your goals to the standard you set at the start of the week?
+#### Did you meet all of your goals you set at the start of the week?
 * Answers here
 
 #### What would you change/improve moving forward?
@@ -42,4 +42,7 @@
 ##### Personal:
 * This
 * And this
+
+#### A pat on the back
+* I added stretching to my morning routine and did it every day.
 
