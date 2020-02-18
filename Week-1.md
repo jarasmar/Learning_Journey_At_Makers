@@ -6,19 +6,21 @@
 
 ***
 
-## Daily Goals
+# Daily Goals
 
-#### Tuesday 18th February 2020
-**GOAL 1:** Learn some Debugging Techniques
-PLAN: Attend Debugging workshop and work through the challenges.
+## Tuesday 18th February 2020
+####GOAL 1:
+Learn some Debugging Techniques
+**PLAN:** 
+Attend Debugging workshop and work through the challenges.
 
-PROCESS:
+**PROCESS:**
 Debug a program by finding and fixing three bugs
 - One was a reasonably simple typo in the file (t1tle instead of title)
 - The second was again a typo, calling a wrong method this time (.includes? instead of .include?) 
 - The third one threw a NameError message (undefined variable) and it was coming from one of the project gems (one of the methods was returning nil).
 
-WHAT I LEARNT:
+**WHAT I LEARNT:**
 >Mantra for Debugging: 
 >- Tighten the loop (find the _exact line_ the bug is coming from)
 >- Get visibility (use `p` to inspect everything to help you home in on the exact line)
@@ -26,10 +28,13 @@ WHAT I LEARNT:
 
 _(Hint: Start from the first line of the error and check the paths, as it may not be caused in the main file but in a secondary one, a gem...)_
 
-**GOAL 2:** Practice Pairing and Test-Drive
-PLAN: Pair with Karla and start working through the afternoon challenge for the week "Boris Bikes".
+####GOAL 2: 
+Practice Pairing and Test-Drive
 
-PROCESS:
+**PLAN:** 
+Pair with Karla and start working through the afternoon challenge for the week "Boris Bikes".
+
+**PROCESS:**
 1. Set up a project in which we could both collaborate via GitHub
 2. Work with _User Stories_ and transform them into _Domain Models_.
 3. Move from _Domain Models_ to a _Feature Test_ and investigate on the error.
@@ -38,7 +43,7 @@ PROCESS:
 6. Go back to feature and implement it. (_Add a Variable to the existent Class_)
 7. Update the Unit test for the new feature. (_Add an "it" to the "describe"_)
 
-WHAT I LEARNT:
+**WHAT I LEARNT:**
 >**User Stories:** describe each thing the program is expected to do from the perspective of an user. 
 
 >**Domain Models:** diagram that shows how objects within a system use messages to communicate with one another. (_Process: write down all the nouns and verbes in the user story and organize them into Objects and Messages in a table_)
