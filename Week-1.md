@@ -9,9 +9,16 @@
 ## Daily Goals
 
 #### Tuesday 18th February 2020
-* GOAL:
-* PLAN:
-* EVIDENCE:
+* GOAL 1: Learn some Debugging Techniques
+PLAN: Attend Debugging workshop and work through the challenges.
+
+EVIDENCE:
+Mantra for Debugging: 
+- Tighten the loop (find the _exact line_ the bug is coming from)
+- Get visibility (use `p` to inspect everything to help you home in on the exact line)
+- Once you know the _one thing_ that is wrong, out of place, misspelled, or not giving you what you expect, try to fix it.
+(Hint: Start from the first line of the error, as you may see in the path it is not caused in the main file but in a secondary one, a gem...)
+* GOAL 2: Practice Pairing
 
 #### Wednesday 19th February 2020
 * GOAL:
