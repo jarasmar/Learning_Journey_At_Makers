@@ -9,7 +9,7 @@
 # Daily Goals
 
 ## Tuesday 18th February 2020
-#### GOAL 1
+### GOAL 1
 Learn some Debugging Techniques
 
 **Plan:** 
@@ -29,7 +29,7 @@ Debug a program by finding and fixing three bugs
 
 _(Hint: Start from the first line of the error and check the paths, as it may not be caused in the main file but in a secondary one, a gem...)_
 
-#### GOAL 2
+### GOAL 2
 Practice Pairing and Test-Drive
 
 **Plan:** 
@@ -54,20 +54,46 @@ Pair with Karla and start working through the afternoon challenge for the week "
 >**Stack Trace:** all the lines that get printed when an error is thrown. Gives information about the type of error and all the paths to the different places of the code where it has happened.
 
 
-#### Wednesday 19th February 2020
-* GOAL:
-* PLAN:
-* EVIDENCE:
+## Wednesday 19th February 2020
+### GOAL 1
+This goal
 
-#### Thursday 20th February 2020
-* GOAL:
-* PLAN:
-* EVIDENCE:
+**Plan:**
+This Plan
 
-#### Friday 21st February 2020
-* GOAL:
-* PLAN:
-* EVIDENCE:
+**Process:**
+This and this
+
+**What I've Learnt:"
+>**This:** blabla
+
+
+## Thursday 20th February 2020
+### GOAL 1
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:"
+>**This:** blabla
+
+
+## Friday 21st February 2020
+### GOAL 1
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:"
+>**This:** blabla
 
 ***
 
