@@ -9,7 +9,7 @@
 # Daily Goals
 
 ## Tuesday 18th February 2020
-####GOAL 1:
+#### GOAL 1:
 Learn some Debugging Techniques
 **PLAN:** 
 Attend Debugging workshop and work through the challenges.
@@ -28,7 +28,7 @@ Debug a program by finding and fixing three bugs
 
 _(Hint: Start from the first line of the error and check the paths, as it may not be caused in the main file but in a secondary one, a gem...)_
 
-####GOAL 2: 
+#### GOAL 2: 
 Practice Pairing and Test-Drive
 
 **PLAN:** 
