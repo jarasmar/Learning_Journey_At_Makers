@@ -19,11 +19,11 @@ Debug a program by finding and fixing three bugs
 - The third one threw a NameError message (undefined variable) and it was coming from one of the project gems (one of the methods was returning nil).
 
 WHAT I LEARNT:
-```Mantra for Debugging: 
+```
+Mantra for Debugging: 
 - Tighten the loop (find the _exact line_ the bug is coming from)
 - Get visibility (use `p` to inspect everything to help you home in on the exact line)
-- Once you know the one thing that is wrong, out of place, misspelled, or not giving you what you expect, 
-try to fix it.
+- Once you know the one thing that is wrong, try to fix it.
 ```
 _(Hint: Start from the first line of the error and check the paths, as it may not be caused in the main file but in a secondary one, a gem...)_
 
@@ -40,16 +40,20 @@ PROCESS:
 7. Update the Unit test for the new feature. (_Add an "it" to the "describe"_)
 
 WHAT I LEARNT:
-```*User Stories:* describe each thing the program is expected to do from the perspective of an user. 
+```
+*User Stories:* describe each thing the program is expected to do from the perspective of an user. 
 ```
 
-```*Domain Models:* diagram that shows how objects within a system use messages to communicate with one another. (_Process: write down all the nouns and verbes in the user story and organize them into Objects and Messages in a table_)
+```
+*Domain Models:* diagram that shows how objects within a system use messages to communicate with one another. (_Process: write down all the nouns and verbes in the user story and organize them into Objects and Messages in a table_)
 ```
 
-```*Feature Test:* taking the information from the Domain Model for a feature you need to figure out how this Objects and Messages will work together in the code (_Process: test it in IRB_).
+```
+*Feature Test:* taking the information from the Domain Model for a feature you need to figure out how this Objects and Messages will work together in the code (_Process: test it in IRB_).
 ```
 
-```*Stack Trace:* all the lines that get printed when an error is thrown. Gives information about the type of error and all the paths to the different places of the code where it has happened.
+```
+*Stack Trace:* all the lines that get printed when an error is thrown. Gives information about the type of error and all the paths to the different places of the code where it has happened.
 ```
 
 #### Wednesday 19th February 2020
