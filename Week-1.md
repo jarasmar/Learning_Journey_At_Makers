@@ -118,10 +118,13 @@ Practice TDD and Git Collaboration.
 Pair with Nima, read the material for Git Collaboration and keep working on the Boris Bikes Project.
 
 **Process:**
-This and this
+1. We had our DockingStation releasing bikes from yesterday, update it with a method `#working?` to check if it works. In order to pass the tests we had to create a new file with a Bike class and the method in it and require it in the docking_station file. (_Did all this process with Feature-Test, Unit-Test, Pass the Test_)
+2. Our method `release_bike` returns nil so we modified it to return `Bike.new`, an instance of the Bike class, so it will also respong to `#working?`.
+
+
 
 **What I've Learnt:**
->**This:** blabla
+>**Rspec Built-in Matchers:** The most interesting was the possibility of using `.and` in between two conditions of the test to make it pass only if both are true. (`.or` would pass if one or the other are true, like the `||` comparisor operator) `expect(subject.release_bike).to be_an_instance_of(Bike).and respond_to(:working?)` 
 
 <br>
 
