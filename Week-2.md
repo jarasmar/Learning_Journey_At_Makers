@@ -5,46 +5,181 @@
 * Explain some basic OO principles and tie them to high level concerns (e.g. ease of change)
 * Review another person's code and give them meaningful feedback
 
-***
-
-## Daily Goals
-
-#### Monday 24th February 2020
-* GOAL:
-* PLAN:
-* EVIDENCE:
-
-#### Tuesday 25th February 2020
-* GOAL:
-* PLAN:
-* EVIDENCE:
-
-#### Wednesday 26th February 2020
-* GOAL:
-* PLAN:
-* EVIDENCE:
-
-#### Thursday 27th February 2020
-* GOAL:
-* PLAN:
-* EVIDENCE:
-
-#### Friday 28th February 2020
-* GOAL:
-* PLAN:
-* EVIDENCE:
+<br>
 
 ***
 
-## Weekend Reflections
+<br>
 
-#### Did you meet all of your goals to the standard you set at the start of the week?
+# Daily Goals
+
+## Monday 24th February 2020
+### MORNING GOAL
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:**
+>**This:** blabla
+
+<br>
+
+### AFTERNOON GOAL
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:**
+>**This:** blabla
+
+<br>
+
+## Tuesday 25th February 2020
+### MORNING GOAL
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:**
+>**This:** blabla
+
+<br>
+
+### AFTERNOON GOAL
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:**
+>**This:** blabla
+
+<br>
+
+## Wednesday 26th February 2020
+### MORNING GOAL
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:**
+>**This:** blabla
+
+<br>
+
+### AFTERNOON GOAL
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:**
+>**This:** blabla
+
+<br>
+
+## Thursday 27th February 2020
+### MORNING GOAL
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:**
+>**This:** blabla
+
+<br>
+
+### AFTERNOON GOAL
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:**
+>**This:** blabla
+
+<br>
+
+## Friday 28th February 2020
+### MORNING GOAL
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:**
+>**This:** blabla
+
+<br>
+
+### AFTERNOON GOAL
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:**
+>**This:** blabla
+
+<br>
+
+***
+
+<br>
+
+# Weekend Reflections
+
+### Did you meet all of your goals you set at the start of the week?
 * Answers here
 
-#### What would you change/improve moving forward?
+### What things do you still need to work through?
+* Mocking
+* And this
+
+### What would you change/improve moving forward?
 ##### Technical: 
 * This
 * And this
 ##### Personal:
 * This
 * And this
+
+### A pat on the back
+* I added stretching to my morning routine and did it every day!!
+
+<br>
