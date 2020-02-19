@@ -9,7 +9,7 @@
 # Daily Goals
 
 ## Tuesday 18th February 2020
-### GOAL 1
+### MORNING GOAL
 Learn some Debugging Techniques
 
 **Plan:** 
@@ -29,7 +29,7 @@ Debug a program by finding and fixing three bugs
 
 _(Hint: Start from the first line of the error and check the paths, as it may not be caused in the main file but in a secondary one, a gem...)_
 
-### GOAL 2
+### AFTERNOON GOAL
 Practice Pairing and Test-Drive
 
 **Plan:** 
@@ -55,7 +55,34 @@ Pair with Karla and start working through the afternoon challenge for the week "
 
 
 ## Wednesday 19th February 2020
-### GOAL 1
+### MORNING GOAL
+Practice some debugging effective techniques.
+
+**Plan:**
+Work through the material on Debugging Approaches.
+
+**Process:**
+This and this
+
+**What I've Learnt:"
+>**This:** blabla
+
+
+### AFTERNOON GOAL
+Practice TDD and Git Collaboration.
+
+**Plan:**
+Pair with Nima, read the material for Git Collaborationd and keep working on the Boris Bikes Project.
+
+**Process:**
+This and this
+
+**What I've Learnt:"
+>**This:** blabla
+
+
+## Thursday 20th February 2020
+### MORNING GOAL
 This goal
 
 **Plan:**
@@ -68,8 +95,7 @@ This and this
 >**This:** blabla
 
 
-## Thursday 20th February 2020
-### GOAL 1
+### AFTERNOON GOAL
 This goal
 
 **Plan:**
@@ -83,7 +109,20 @@ This and this
 
 
 ## Friday 21st February 2020
-### GOAL 1
+### MORNING GOAL
+This goal
+
+**Plan:**
+This Plan
+
+**Process:**
+This and this
+
+**What I've Learnt:"
+>**This:** blabla
+
+
+### AFTERNOON GOAL
 This goal
 
 **Plan:**
@@ -97,10 +136,14 @@ This and this
 
 ***
 
-## Weekend Reflections
+# Weekend Reflections
 
 #### Did you meet all of your goals you set at the start of the week?
 * Answers here
+
+#### What things do you still need to work through?
+* Mocking
+* And this
 
 #### What would you change/improve moving forward?
 ##### Technical: 
@@ -111,5 +154,5 @@ This and this
 * And this
 
 #### A pat on the back
-* I added stretching to my morning routine and did it every day.
+* I added stretching to my morning routine and did it every day!!
 
