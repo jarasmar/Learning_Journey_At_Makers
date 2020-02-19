@@ -68,10 +68,46 @@ Practice some debugging effective techniques.
 Work through the material on Debugging Approaches.
 
 **Process:**
-This and this
+Work on error caused in two different programs:
+```
+def factorial(n)
+  product = 1
+  while n > 0
+    n -= 1
+    product *= n
+  end
+  product
+end
+```
+Giving visibility to every step of the process showed that the product was always smaller than expected. Realized that within the while loop `n -= 1` should be placed after `product *= n` so that in the first loop n could be used as given.
+
+```
+def encode(plaintext, key)
+  cipher = key.chars.uniq + (('a'...'z').to_a - key.chars)
+  ciphertext_chars = plaintext.chars.map do |char|
+    (65 + cipher.find_index(char)).chr
+  end
+  ciphertext_chars.join
+end
+
+def decode(ciphertext, key)
+  cipher = key.chars.uniq + (('a'...'z').to_a - key.chars)
+  plaintext_chars = ciphertext.chars.map do |char|
+    cipher[65 - char.ord]
+  end
+  plaintext_chars.join
+end
+
+encode("theswiftfoxjumpedoverthelazydog", "secretkey")
+"EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL"
+```
+This second was way more tricky. There were errors thrown in both methods but once I found the first one it was much more easier to solve the second.
+The encode method returned `TypeError: nil cant be coerced into Integer` when passing the given argument, but it would work with almost anything else. I started giving visibility and it was by printing `char` inside the map iterations that I saw it was actually breaking at letter 'z'. Automatically realized that cipher was using an excluding range, bug fixed!
+
+The bugs in the decode method was, firstly in the range, same as in the encode, and then saw that `cipher[65 - char.ord]` made no sense and should be done in the opposite way `cipher[char.ord - 65]` to mirror the one in the encode method.
 
 **What I've Learnt:**
->**This:** blabla
+>**Don't fall in the Panic Zone:** I managed to feel much more calm than yesterday through all the process although the bugs were harder to fix. And I also got a deeper understanding of the ways of giving visibility and tighten the loop to find the error.
 
 <br>
 
@@ -79,7 +115,7 @@ This and this
 Practice TDD and Git Collaboration.
 
 **Plan:**
-Pair with Nima, read the material for Git Collaborationd and keep working on the Boris Bikes Project.
+Pair with Nima, read the material for Git Collaboration and keep working on the Boris Bikes Project.
 
 **Process:**
 This and this
