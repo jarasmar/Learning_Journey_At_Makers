@@ -4,8 +4,11 @@
 * Follow an effective debugging process
 * Describe some basic OO principles like encapsulation, SRP
 <br>
+
 ***
+
 <br>
+
 # Daily Goals
 
 ## Tuesday 18th February 2020
