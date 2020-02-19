@@ -4,7 +4,9 @@
 * Follow an effective debugging process
 * Describe some basic OO principles like encapsulation, SRP
 
+
 ***
+
 
 # Daily Goals
 
