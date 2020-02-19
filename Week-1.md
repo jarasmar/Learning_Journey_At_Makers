@@ -32,6 +32,8 @@ Debug a program by finding and fixing three bugs
 
 _(Hint: Start from the first line of the error and check the paths, as it may not be caused in the main file but in a secondary one, a gem...)_
 
+<br>
+
 ### AFTERNOON GOAL
 Practice Pairing and Test-Drive
 
@@ -56,6 +58,7 @@ Pair with Karla and start working through the afternoon challenge for the week "
 
 >**Stack Trace:** all the lines that get printed when an error is thrown. Gives information about the type of error and all the paths to the different places of the code where it has happened.
 
+<br>
 
 ## Wednesday 19th February 2020
 ### MORNING GOAL
@@ -70,6 +73,7 @@ This and this
 **What I've Learnt:**
 >**This:** blabla
 
+<br>
 
 ### AFTERNOON GOAL
 Practice TDD and Git Collaboration.
@@ -83,6 +87,7 @@ This and this
 **What I've Learnt:**
 >**This:** blabla
 
+<br>
 
 ## Thursday 20th February 2020
 ### MORNING GOAL
@@ -97,6 +102,7 @@ This and this
 **What I've Learnt:**
 >**This:** blabla
 
+<br>
 
 ### AFTERNOON GOAL
 This goal
@@ -110,6 +116,7 @@ This and this
 **What I've Learnt:**
 >**This:** blabla
 
+<br>
 
 ## Friday 21st February 2020
 ### MORNING GOAL
@@ -124,6 +131,7 @@ This and this
 **What I've Learnt:**
 >**This:** blabla
 
+<br>
 
 ### AFTERNOON GOAL
 This goal
@@ -137,18 +145,22 @@ This and this
 **What I've Learnt:**
 >**This:** blabla
 
+<br>
+
 ***
+
+<br>
 
 # Weekend Reflections
 
-#### Did you meet all of your goals you set at the start of the week?
+### Did you meet all of your goals you set at the start of the week?
 * Answers here
 
-#### What things do you still need to work through?
+### What things do you still need to work through?
 * Mocking
 * And this
 
-#### What would you change/improve moving forward?
+### What would you change/improve moving forward?
 ##### Technical: 
 * This
 * And this
@@ -156,6 +168,7 @@ This and this
 * This
 * And this
 
-#### A pat on the back
+### A pat on the back
 * I added stretching to my morning routine and did it every day!!
 
+<br>
