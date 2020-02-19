@@ -64,7 +64,7 @@ Work through the material on Debugging Approaches.
 **Process:**
 This and this
 
-**What I've Learnt:"
+**What I've Learnt:**
 >**This:** blabla
 
 
@@ -77,7 +77,7 @@ Pair with Nima, read the material for Git Collaborationd and keep working on the
 **Process:**
 This and this
 
-**What I've Learnt:"
+**What I've Learnt:**
 >**This:** blabla
 
 
@@ -91,7 +91,7 @@ This Plan
 **Process:**
 This and this
 
-**What I've Learnt:"
+**What I've Learnt:**
 >**This:** blabla
 
 
@@ -104,7 +104,7 @@ This Plan
 **Process:**
 This and this
 
-**What I've Learnt:"
+**What I've Learnt:**
 >**This:** blabla
 
 
@@ -118,7 +118,7 @@ This Plan
 **Process:**
 This and this
 
-**What I've Learnt:"
+**What I've Learnt:**
 >**This:** blabla
 
 
@@ -131,7 +131,7 @@ This Plan
 **Process:**
 This and this
 
-**What I've Learnt:"
+**What I've Learnt:**
 >**This:** blabla
 
 ***
