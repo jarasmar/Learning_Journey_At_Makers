@@ -205,16 +205,34 @@ _In other words, a feature test reproduces what the user does. When doing repl a
 <br>
 
 ### AFTERNOON GOAL
-This goal
+Practice TDD
 
 **Plan:**
-This Plan
+Pair with Peter and Patrick and keep going with the Boris Bikes Projects.
 
 **Process:**
-This and this
+1. We compared our previous code and made sure we all start at the same level and our code that far works the same way even if was different.
+2. Implement our code with user story "I want to dock my bike at the docking station" creating a dock method for our DockingStation class that takes bike as an argument.
+```
+it "responds to #dock" do
+  bike = Bike.new
+  expect{subject.dock(bike)}.not_to raise_error
+end
+```
+3. Implement our code with user story "I want to see a bike that has been docked". This one was more tricky as we wanted the bike that has been docked get stored in the station variable. <br/>
+This will be the test:
+```
+it "docks bike" do
+    bike = Bike.new
+    subject.dock(bike)
+    expect(subject.station).to eq bike
+end
+```
+And on the ruby file we created an Instance Variable `@station` with an `attr_reader :station`.
 
 **What I've Learnt:**
->**This:** blabla
+>**Instance Variable:** blabla
+>**attr_reader:** blabla
 
 <br>
 
