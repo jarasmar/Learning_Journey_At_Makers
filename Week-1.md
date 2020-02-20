@@ -159,13 +159,13 @@ Pair with Nima, read the material for Git Collaboration and keep working on the 
 
 **Plan:**
 1. Go through Git Collaboration material and GitHub Guides and configure it to display my name and emails in the commits.
-2. Go through material and excercises provided for TDD.
-**Process:**
-1.
 ```
 $ git config --global user.name "Jara Santamaria"
 $ git config --global user.email "jarasmar@gmail.com"
 ```
+2. Go through material and excercises provided for TDD.
+
+**Process:**
 2. For practicing TDD I went through different stages:
 - Firstly I read an article about the Three Laws of TDD. 
 - I read a blogpost about Four-Phase Testing.
