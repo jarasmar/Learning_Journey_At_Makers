@@ -5,6 +5,29 @@
 * Describe some basic OO principles like encapsulation, SRP
 <br>
 
+MATERIAL TO GO THROUGH
+**Challenges**
+Afternoons - Boris bikes
+Weekend - Airport
+
+**Practicals**
+Test Driving Exercises
+Test Driving Practice
+Encapsulation & Cohesion
+Testing behaviour rather than state
+
+**Resources**
+The 4 phases of a test
+The three rules of TDD
+Encapsulation on Wikipedia
+Technical Learning Resources
+
+**Skills workshops**
+Git
+Encapsulation
+Mocking
+TDD a simple program
+
 ***
 
 <br>
@@ -130,13 +153,19 @@ Pair with Nima, read the material for Git Collaboration and keep working on the 
 
 ## Thursday 20th February 2020
 ### MORNING GOAL
-This goal
+1. Configure name and email in Git.
+2. Practice TDD
 
 **Plan:**
-This Plan
+1. Go through Git Collaboration material and GitHub Guides and configure it to display my name and emails in the commits.
 
 **Process:**
-This and this
+1.
+```
+$ git config --global user.name "Jara Santamaria"
+$ git config --global user.email "jarasmar@gmail.com"
+
+```
 
 **What I've Learnt:**
 >**This:** blabla
