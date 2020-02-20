@@ -165,10 +165,25 @@ Pair with Nima, read the material for Git Collaboration and keep working on the 
 $ git config --global user.name "Jara Santamaria"
 $ git config --global user.email "jarasmar@gmail.com"
 ```
-2. Firstly I read an article about the Three Laws of TDD. 
+2. For practicing TDD I went through different stages:
+- Firstly I read an article about the Three Laws of TDD. 
+- I read a blogpost about Four-Phase Testing.
 
 **What I've Learnt:**
 >**The Three Laws of TDD:** <br/> 1. You are not allowed to write any production code unless it is to make a failing unit test pass. <br/> 2. You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures. <br/> 3. You are not allowed to write any more production code than is sufficient to pass the one failing unit test.
+_By practicing TDD we save a lot of future Debugging time. For a good practice we should keep the system executing at all times. The time between executing tests is within seconds or minutes._
+
+>**Four-Phase Test:** <br/> 1. Setup <br/> 2. Excercise (the system under test is executed) <br/> 3. Verify (the result of the exercise is verified against the developer’s expectations) <br/> 4. Teardown (the system under test is reset to its pre-setup state, usually implicitly)
+
+```
+it 'encrypts the password' do
+  user = User.new(password: 'password') # setup
+
+  user.save # excercise
+
+  user.encrypted_password.should_not be_nil # verify
+end
+```
 
 <br>
 
