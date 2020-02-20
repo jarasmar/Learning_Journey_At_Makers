@@ -171,18 +171,18 @@ $ git config --global user.email "jarasmar@gmail.com"
 - I read a blogpost about Four-Phase Testing.
 3. Discussed over the steps of TDD and why is a good technique and then apply the process to a Class. <br/>
 Process:
-1. Read and understand one specification/user story (or create it if it's our own program)
-2. Domain Model (diagram that shows you the objects and messages from the spec)
-3. Feature test (express user needs in code - IRB)
-4. Unit test (rspec)
-5. Run it and fail.
-6. Write the minimum amount of code to make the test pass.
-7. Refactor your code until the test is green.
-8. Do as many unit tests as needed to pass completely the feature test.
-9. Go for a new User Story
+- Read and understand one specification/user story (or create it if it's our own program)
+- Domain Model (diagram that shows you the objects and messages from the spec)
+- Feature test (express user needs in code - IRB)
+- Unit test (rspec)
+- Run it and fail.
+- Write the minimum amount of code to make the test pass.
+- Refactor your code until the test is green.
+- Do as many unit tests as needed to pass completely the feature test.
+- Go for a new User Story
 
 **What I've Learnt:**
->**The Three Laws of TDD:** <br/> 1. You are not allowed to write any production code unless it is to make a failing unit test pass. <br/> 2. You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures. <br/> 3. You are not allowed to write any more production code than is sufficient to pass the one failing unit test.
+>**The Three Laws of TDD:** <br/> 1. You are not allowed to write any production code unless it is to make a failing unit test pass. <br/> 2. You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures. <br/> 3. You are not allowed to write any more production code than is sufficient to pass the one failing unit test. <br/>
 _By practicing TDD we save a lot of future Debugging time. For a good practice we should keep the system executing at all times. The time between executing tests is within seconds or minutes._
 
 >**Four-Phase Test:** <br/> 1. Setup <br/> 2. Excercise (the system under test is executed) <br/> 3. Verify (the result of the exercise is verified against the developer’s expectations) <br/> 4. Teardown (the system under test is reset to its pre-setup state, usually implicitly)
