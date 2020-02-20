@@ -26,7 +26,7 @@ Technical Learning Resources
 Git
 Encapsulation
 Mocking
-TDD a simple program
+
 
 ***
 
@@ -154,7 +154,8 @@ Pair with Nima, read the material for Git Collaboration and keep working on the 
 ## Thursday 20th February 2020
 ### MORNING GOAL
 1. Configure name and email in Git.
-2. Practice TDD
+2. Practice TDD.
+3. Attend 'TDD a simple program' Workshop.
 
 **Plan:**
 1. Go through Git Collaboration material and GitHub Guides and configure it to display my name and emails in the commits.
@@ -168,6 +169,17 @@ $ git config --global user.email "jarasmar@gmail.com"
 2. For practicing TDD I went through different stages:
 - Firstly I read an article about the Three Laws of TDD. 
 - I read a blogpost about Four-Phase Testing.
+3. Discussed over the steps of TDD and why is a good technique and then apply the process to a Class. <br/>
+Process:
+1. Read and understand one specification/user story (or create it if it's our own program)
+2. Domain Model (diagram that shows you the objects and messages from the spec)
+3. Feature test (express user needs in code - IRB)
+4. Unit test (rspec)
+5. Run it and fail.
+6. Write the minimum amount of code to make the test pass.
+7. Refactor your code until the test is green.
+8. Do as many unit tests as needed to pass completely the feature test.
+9. Go for a new User Story
 
 **What I've Learnt:**
 >**The Three Laws of TDD:** <br/> 1. You are not allowed to write any production code unless it is to make a failing unit test pass. <br/> 2. You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures. <br/> 3. You are not allowed to write any more production code than is sufficient to pass the one failing unit test.
@@ -184,6 +196,11 @@ it 'encrypts the password' do
   user.encrypted_password.should_not be_nil # verify
 end
 ```
+
+>**Feature Test vs. Unit Test:** <br/>
+A unit test is only for one specific function or individual component of a program, that doesn't depend in any other thing of this program. A feature test is for the whole app, showing how this thing we are testing will work with the whole, from the point of view of the user. <br/>
+1 user story -> 1 or more feature tests -> at least one unit test for each of the feature tests <br/>
+_In other words, a feature test reproduces what the user does. When doing repl apps the user will interact with ruby language, so we test it in IRB. Command Line Apps interact with input/output and Web Apps interact with clics._
 
 <br>
 
