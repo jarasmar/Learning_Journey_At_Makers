@@ -158,17 +158,17 @@ Pair with Nima, read the material for Git Collaboration and keep working on the 
 
 **Plan:**
 1. Go through Git Collaboration material and GitHub Guides and configure it to display my name and emails in the commits.
-
+2. Go through material and excercises provided for TDD.
 **Process:**
 1.
 ```
 $ git config --global user.name "Jara Santamaria"
 $ git config --global user.email "jarasmar@gmail.com"
-
 ```
+2. Firstly I read an article about the Three Laws of TDD. 
 
 **What I've Learnt:**
->**This:** blabla
+>**The Three Laws of TDD:** \ 1. You are not allowed to write any production code unless it is to make a failing unit test pass. \ 2. You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures. \ 3. You are not allowed to write any more production code than is sufficient to pass the one failing unit test.
 
 <br>
 
