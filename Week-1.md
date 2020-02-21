@@ -233,6 +233,7 @@ And on the ruby file we created an Instance Variable `@station` with an `attr_re
 **What I've Learnt:**
 >**Instance Variable:** blabla
 >**attr_reader:** blabla
+>**Require vs. require_relative:** blabla
 
 <br>
 
