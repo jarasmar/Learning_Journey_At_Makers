@@ -231,38 +231,63 @@ end
 And on the ruby file we created an Instance Variable `@station` with an `attr_reader :station`.
 
 **What I've Learnt:**
->**Instance Variable:** blabla
->**attr_reader:** blabla
->**Require vs. require_relative:** blabla
+>**Instance Variable:** An instance variable is used as part of Object-Oriented Programming (OOP) to give objects their own private space to store data in a Class. We define them starting with @. We can create it on their own but if we want to assign them an initial value they have to be created inside the method `initialize`, that will make the value available through all methods in the Class.
+
+>**Encapsulation:** you can't access instance variables from outside the class, that's what we call encapsulation, an object's data is protected from the outside.
+
+>**attr_reader:** returns the value of an instance variable and makes it accessible to others. (_`attr_accesor` gives permission to both write and read an instance variable, `_attr_reader_` is only for reading and `_attr_writer_` only for writing_).
+
+>**Require vs. require_relative:** The general rule is `require` should be used for external files, like gems, while `require_relative` should be used for referring to files within your directory. `Require_relative`'s scope is wider and is aware of the entire directory where the program resides.
+
 
 <br>
 
 ## Friday 21st February 2020
 ### MORNING GOAL
-This goal
+Practice TDD
 
 **Plan:**
-This Plan
+Start working on the birthdays project.
 
 **Process:**
-This and this
+- Store all of my friends’ birthdays so I can keep track of them
+- See them all at once with their names and birthdays each on a line in a tidy format
+- Check whose birthday it is today - the program can check through the birthdays I have stored and check each one to see if it’s someone’s birthday, and tells me something like "It's Mary Poppin's birthday today! They are 124 years old!" - otherwise it won't say anything.
 
 **What I've Learnt:**
->**This:** blabla
+>**Time Class:** 
+```rb
+time = Time.new
+time.strftime("%d/%m/%Y")        # "05/12/2015"
+```
 
 <br>
 
 ### AFTERNOON GOAL
-This goal
+Practice TDD
 
 **Plan:**
-This Plan
+Pair with Daria and keep working on the Boris Bikes project.
 
 **Process:**
-This and this
+1. I don't want a station to release a bike when it is not available: Create a test that will raise an exception.
+2. Limit the capacity of an station: Raise exception when the station is full.
+3. Stations will have a default value of 20 bikes: initialize a constant variable `@capacity` to equal 20.
+4. Refactor your code so it follows the _Single Responsability Principle_ using private methods.
+5. Use a constant to set the default capacity of the station instead of using the number 20 all over the code (improves readibility).
+6. Give the possibility to give a station a bigger capacity when needed, but keeping the default value if not specified.
+```rb
+class DockingStation
+attr_reader :station, :capacity
+DEFAULT_CAPACITY = 20
+  def initialize(capacity=DEFAULT_CAPACITY)
+    @station = []
+    @capacity = capacity
+  end
+```
 
 **What I've Learnt:**
->**This:** blabla
+>**Private Methods:** they are not accessible from outside the object and they are only used internally. An important aspect of good object-oriented design is that the consumer of an object should not have to know how that object is implemented.
 
 <br>
 
