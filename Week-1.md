@@ -92,7 +92,7 @@ Work through the material on Debugging Approaches.
 
 **Process:**
 Work on error caused in two different programs:
-```
+```rb
 def factorial(n)
   product = 1
   while n > 0
@@ -104,7 +104,7 @@ end
 ```
 Giving visibility to every step of the process showed that the product was always smaller than expected. Realized that within the while loop `n -= 1` should be placed after `product *= n` so that in the first loop n could be used as given.
 
-```
+```rb
 def encode(plaintext, key)
   cipher = key.chars.uniq + (('a'...'z').to_a - key.chars)
   ciphertext_chars = plaintext.chars.map do |char|
@@ -159,7 +159,7 @@ Pair with Nima, read the material for Git Collaboration and keep working on the 
 
 **Plan:**
 1. Go through Git Collaboration material and GitHub Guides and configure it to display my name and emails in the commits.
-```
+```rb
 $ git config --global user.name "Jara Santamaria"
 $ git config --global user.email "jarasmar@gmail.com"
 ```
@@ -187,7 +187,7 @@ _By practicing TDD we save a lot of future Debugging time. For a good practice w
 
 >**Four-Phase Test:** <br/> 1. Setup <br/> 2. Excercise (the system under test is executed) <br/> 3. Verify (the result of the exercise is verified against the developer’s expectations) <br/> 4. Teardown (the system under test is reset to its pre-setup state, usually implicitly)
 
-```
+```rb
 it 'encrypts the password' do
   user = User.new(password: 'password') # setup
 
@@ -213,7 +213,7 @@ Pair with Peter and Patrick and keep going with the Boris Bikes Projects.
 **Process:**
 1. We compared our previous code and made sure we all start at the same level and our code that far works the same way even if was different.
 2. Implement our code with user story "I want to dock my bike at the docking station" creating a dock method for our DockingStation class that takes bike as an argument.
-```
+```rb
 it "responds to #dock" do
   bike = Bike.new
   expect{subject.dock(bike)}.not_to raise_error
