@@ -289,10 +289,9 @@ We have a request from a client to write the software to control the flow of pla
 ```rb
 allow(subject).to receive(:storm?) { false } # overrides storm true
 ```
-_To override a rand and return the expected value in the test:_
 
 ```rb
-expect(subject).to receive(:rand).and_return(7)
+expect(subject).to receive(:rand).and_return(7) # override a rand and return the expected value
 ```
 
 <br>
@@ -305,21 +304,24 @@ expect(subject).to receive(:rand).and_return(7)
 # Weekend Reflections
 
 ### Did you meet all of your goals you set at the start of the week?
-* Answers here
+* I have improved my techniques from all of them but I am still not confident using them.
+* I haven't followed a proper Driver/Navigator technique with most of my pairs, we were mostly working together.
 
 ### What things do you still need to work through?
-* Mocking
-* And this
+* Rspec Mocking
+* TDD (specially understanding _Feature Tests_)
 
-### What would you change/improve moving forward?
+### What would you change/improve to keep moving forward?
 ##### Technical: 
-* This
-* And this
+* Understand how to use Feature Tests effectively.
+* Work in breaking every feature into the smallest possible pieces and not step forward to what it is supposed to be doing in the future. Just focus in one small step at a time.
+
 ##### Personal:
-* This
-* And this
+* Don't skip meditation because I am busy coding.
+* Don't keep thinking about my code when I take breaks or go to bed.
 
 ### A pat on the back
 * I added stretching to my morning routine and did it every day!!
+* I organized a weekly food preparation for Sunday and made it work for the whole week.
 
 <br>
