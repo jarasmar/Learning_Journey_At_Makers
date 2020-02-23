@@ -5,29 +5,6 @@
 * Describe some basic OO principles like encapsulation, SRP
 <br>
 
-MATERIAL TO GO THROUGH
-**Challenges**
-Afternoons - Boris bikes
-Weekend - Airport
-
-**Practicals**
-Test Driving Exercises
-Test Driving Practice
-Encapsulation & Cohesion
-Testing behaviour rather than state
-
-**Resources**
-The 4 phases of a test
-The three rules of TDD
-Encapsulation on Wikipedia
-Technical Learning Resources
-
-**Skills workshops**
-Git
-Encapsulation
-Mocking
-
-
 ***
 
 <br>
@@ -294,6 +271,36 @@ DEFAULT_CAPACITY = 20
 ***
 
 <br>
+
+## Weekend Challenge
+**Airport Challenge:** See the full project [here](https://github.com/jarasmar/airport_challenge)
+
+We have a request from a client to write the software to control the flow of planes at an airport. The weather is normally sunny but sometimes there can also be a storm. These are the user stories:
+- I want to instruct a plane to land at an airport
+- I want to instruct a plane to take off from an airport and confirm that it is no longer in the airport
+- I want to prevent landing when the airport is full
+- I would like a default airport capacity that can be overridden as appropriate
+- I want to prevent takeoff and landing when weather is stormy
+
+**What I've Learnt:**
+>**Rspec Mocks:** help to control the context in a code example by letting you set known return values, fake implementations of methods, and even set expectations that specific messages are received by an object. (_For example this will help you override the random weather to ensure consistent test behaviour._)
+
+>**Method Stubs:** instruction to an object (real or test double) to return a known value in response to a message: <br/> 
+```rb
+allow(subject).to receive(:storm?) { false } # overrides storm true
+```
+_To override a rand and return the expected value in the test:_
+
+```rb
+expect(subject).to receive(:rand).and_return(7)
+```
+
+<br>
+
+***
+
+<br>
+
 
 # Weekend Reflections
 
