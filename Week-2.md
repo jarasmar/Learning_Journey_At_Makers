@@ -162,6 +162,19 @@ This and this
 
 <br>
 
+## Weekend Challenge
+Description
+
+**What I've Learnt:**
+>**This:** blabla
+
+<br>
+
+***
+
+<br>
+
+
 # Weekend Reflections
 
 ### Did you meet all of your goals you set at the start of the week?
