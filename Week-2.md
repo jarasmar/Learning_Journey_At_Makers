@@ -45,13 +45,22 @@ Practice Pair Programming and TDD
 
 **Process:**
 Oyster card Project
-1. Create a Gemfile
+1. Create a Gemfile (_source for gems, version of ruby and add the rspec gem to ‘test’ and ’development’ groups_)
 2. Create RSpec conventional files
-3. Review debugging basics
-4. Add the balance
-5. Enable top up functionality
-6. Enforce maximum balance
-7. Deduct the money
+3. Review debugging basics (_understand how to read a stack trace_)
+4. Add the balance (_first test, default value of 0_)
+5. Enable top up functionality (_method top up adds the value to balance_)
+```rb
+expect { subject.top_up 10 }.to change{ subject.balance }.by 10
+```
+6. Enforce maximum balance (_set a constant balance limit and raise error if top up exceeds it_) 
+```rb
+def top_up(value)
+  fail "Top up limit of #{LIMIT} exceeded" if value > LIMIT
+  @balance += value
+end
+```
+7. Deduct the money (_method deduct substracts the amount from balance_)
 <br/>
 Process Workshop: 10 minutes walk
 1. Read and refine the story (in groups)
@@ -63,7 +72,17 @@ In pairs, by turns:
 6. Give feedback to your colleague
 
 **What I've Learnt:**
->**This:** blabla
+>**Gemfile:** a file we create which is used for describing gem dependencies for Ruby programs. A gem is a collection of Ruby code that we can extract into a “collection” which we can call later. Gemfile should always be in the root of your project directory, this is where Bundler expects it to be.<br/>
+```
+source "https://rubygems.org”
+ruby "2.6.3"
+<br/>
+group :development, :test do
+  gem "rspec"
+  gem "my_other_gem"
+end
+```
+>**READ INSTRUCTIONS PROPERLY:** when we grouped for the "10 minutes walk" project, all my group started it from a completely wrong approach because none of us read the instructions carefully. We were suppossed to "_Create a function that will return true if the walk will take you exactly ten minutes and will return you to your starting point._" Instead we started creating an app that would generate the walks that would cover those parameters, which is a much longer process. We still practiced TDD which was the main point, but reading the instructions should definitely be in our top priorities.
 
 <br>
 
