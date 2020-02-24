@@ -62,8 +62,11 @@ end
 ```
 7. Deduct the money (_method deduct substracts the amount from balance_)
 <br/>
+
 Process Workshop: 10 minutes walk<br/>
 Oyster card Project<br/>
+  1. fdfd
+  2. dfd
 1. Read and refine the story (in groups)<br/>
 2. Make a plan (in groups)<br/>
 In pairs, by turns:<br/>
