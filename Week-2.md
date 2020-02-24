@@ -15,16 +15,18 @@
 
 ## Monday 24th February 2020
 ### MORNING GOAL
-This goal
+Code Review and set goals for the week
 
 **Plan:**
-This Plan
+Peer code review of the weekend challenge.
 
 **Process:**
-This and this
+1. Make an apreciation
+2. Make a suggestion
+3. Make an improvement on your own code from the review you got
 
 **What I've Learnt:**
->**This:** blabla
+>**Doubles:** blabla
 
 <br>
 
