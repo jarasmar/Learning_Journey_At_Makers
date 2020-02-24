@@ -65,15 +65,14 @@ end
 
 Process Workshop: 10 minutes walk<br/>
 Oyster card Project<br/>
-  1. fdfd
-  2. dfd
-1. Read and refine the story (in groups)<br/>
-2. Make a plan (in groups)<br/>
-In pairs, by turns:<br/>
-3. Start a TDD Process on your own (30 min)<br/>
-4. Get feedback from your colleague<br/>
-5. See your colleague go through TDD (30 min)<br/>
-6. Give feedback to your colleague<br/>
+
+  1. Read and refine the story (in groups)<br/>
+  2. Make a plan (in groups)<br/>
+  In pairs, by turns:<br/>
+  3. Start a TDD Process on your own (30 min)<br/>
+  4. Get feedback from your colleague<br/>
+  5. See your colleague go through TDD (30 min)<br/>
+  6. Give feedback to your colleague<br/>
 
 **What I've Learnt:**
 >**Gemfile:** a file we create which is used for describing gem dependencies for Ruby programs. A gem is a collection of Ruby code that we can extract into a “collection” which we can call later. Gemfile should always be in the root of your project directory, this is where Bundler expects it to be.<br/>
