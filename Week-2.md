@@ -43,7 +43,7 @@ Practice Pair Programming and TDD
 1. Pair with Kuba and start working on the Oystercard Project.
 2. Attend Process Workshop
 
-**Process:**
+**Process:**<br/>
 Oyster card Project
 1. Create a Gemfile (_source for gems, version of ruby and add the rspec gem to ‘test’ and ’development’ groups_)
 2. Create RSpec conventional files
@@ -62,7 +62,7 @@ end
 ```
 7. Deduct the money (_method deduct substracts the amount from balance_)
 <br/>
-Process Workshop: 10 minutes walk
+Process Workshop: 10 minutes walk<br/>
 1. Read and refine the story (in groups)
 2. Make a plan (in groups)<br/>
 In pairs, by turns:
