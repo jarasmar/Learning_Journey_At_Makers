@@ -5,6 +5,8 @@
 * Explain some basic OO principles and tie them to high level concerns (e.g. ease of change)
 * Review another person's code and give them meaningful feedback
 
+_Plan to add improvements to my Airport Challenge to make it more consistent_
+
 <br>
 
 ***
@@ -21,20 +23,23 @@ Code Review and set goals for the week
 Peer code review of the weekend challenge.
 
 **Process:**
-1. Make an apreciation
-2. Make a suggestion
-3. Make an improvement on your own code from the review you got
+1. Make an apreciation.
+2. Make a suggestion.
+3. Make an improvement on your own code from the review you got.
 
 **What I've Learnt:**
->**Doubles:** blabla
+>**Test Doubles:** any object that stands in for a real object during a test (think "stunt double"). You create one using the double method. When creating a double, you can allow messages (and settheir return values) by passing a hash.
+```
+plane = double("new plane")
+```
 
 <br>
 
 ### AFTERNOON GOAL
-This goal
+Practice Pair Programming and TDD
 
 **Plan:**
-This Plan
+Pair with Kuba and start working on the Oystercard Project.
 
 **Process:**
 This and this
