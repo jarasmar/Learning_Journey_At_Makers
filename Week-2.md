@@ -40,10 +40,27 @@ plane = double("new plane")
 Practice Pair Programming and TDD
 
 **Plan:**
-Pair with Kuba and start working on the Oystercard Project.
+1. Pair with Kuba and start working on the Oystercard Project.
+2. Attend Process Workshop
 
 **Process:**
-This and this
+Oyster card Project
+1. Create a Gemfile
+2. Create RSpec conventional files
+3. Review debugging basics
+4. Add the balance
+5. Enable top up functionality
+6. Enforce maximum balance
+7. Deduct the money
+<br/>
+Process Workshop: 10 minutes walk
+1. Read and refine the story (in groups)
+2. Make a plan (in groups)<br/>
+In pairs, by turns:
+3. Start a TDD Process on your own (30 min)
+4. Get feedback from your colleague
+5. See your colleague go through TDD (30 min)
+6. Give feedback to your colleague
 
 **What I've Learnt:**
 >**This:** blabla
