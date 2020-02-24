@@ -25,8 +25,8 @@ Peer code review of the weekend challenge.
 **Process:**
 1. Make an apreciation.
 2. Make a suggestion.
-3. Make an improvement on your own code from the review you got.
-  (My peer suggested to creates doubles in my tests instead of create new instances of the class Plane, and I changed all those lines of my code to let it test independently in the Airport class.)
+3. Make an improvement on your own code from the review you got. <br/>
+(My peer suggested to creates doubles in my tests instead of create new instances of the class Plane, and I changed all those lines of my code to let it test independently in the Airport class.)
 
 **What I've Learnt:**
 >**Test Doubles:** any object that stands in for a real object during a test (think "stunt double"). You create one using the double method. When creating a double, you can allow messages (and settheir return values) by passing a hash.
