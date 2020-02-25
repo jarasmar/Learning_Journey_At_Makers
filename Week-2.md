@@ -105,7 +105,7 @@ Workshop:
 | NOTEBOOK         | NOTE         | TAG             |
 | :--------------: |:------------:|:---------------:|
 | note             | tag          |                 |
-| create_note<br/>save_note<br/>search_tag(tag) | add_tag<br/> | create_tag(tag) |
+| create_note<br/>save_note<br/>search_tag(tag) | add_tag(tag) <br/> | create_tag(tag_name) |
 
 - Build the structure of your code based in that model.
 ```rb
@@ -136,9 +136,18 @@ class Tag
   end
 end
 ```
+<br/>
+Redo 10 Minute Walk<br/>
+I am happy with my approach to TDD in this project, I managed to build all my code on a test-firs basis and it works following all the given conditions.
 
 **What I've Learnt:**
->**Class Diagram:** blabla
+>**Class Diagram:** represents the relationships between objects in your model. The objects in your model are represented by boxes subdivided into up to three sections. The name of the object is placed in the top section, any instance variables go in the middle, and methods are listed in the bottom section. The arrows between the boxes indicate that the class at the base of the arrow knows about the class at the tip. <br/>
+| OBJECT 1           |    | OBJECT 2     |    | OBJECT 3        |
+| :----------------: | => |:------------:| => |:---------------:|
+| STATE (inst_var)   |    |              |    |                 |
+| BEHAVIOUR (methods)|    |              |    |                 |
+
+
 
 <br>
 
