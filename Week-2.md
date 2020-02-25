@@ -91,16 +91,54 @@ end
 
 ## Tuesday 25th February 2020
 ### MORNING GOAL
-This goal
+Improve Domain Model Diagramming
+Improve TDD
 
 **Plan:**
-This Plan
+- Attend Domain Model Workshop with Josh
+- Redo "10 minute walk" project from a correct approach
 
 **Process:**
-This and this
+Workshop:
+- Use a _Class Diagram_ to build the _Domain Model_ for a Notebook app (in groups)
+
+| NOTEBOOK         | NOTE         | TAG             |
+| :--------------: |:------------:|:---------------:|
+| note             | tag          |                 |
+| create_note<br/>save_note<br/>search_tag(tag) | add_tag<br/> | create_tag(tag) |
+
+- Build the structure of your code based in that model.
+```rb
+class Notebook
+
+  def create_note
+    # return Note.new
+  end
+
+  def save_note
+    # saves Note.new to notebook
+  end
+
+  def search_tag(tag)
+    # searches al notes within notebook with that tag
+  end
+end
+
+class Note
+  def add_tag(tag)
+    # adds a tag(tag name) to a note
+  end
+end
+
+class Tag
+  def create_tag(tag_name)
+    # creates a new tag
+  end
+end
+```
 
 **What I've Learnt:**
->**This:** blabla
+>**Class Diagram:** blabla
 
 <br>
 
