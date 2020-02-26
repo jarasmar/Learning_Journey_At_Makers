@@ -161,7 +161,9 @@ Pair with Liam and practice TDD working on the Oystercard Project
 - Give the card the possibility to touch in and touch out and define an in-journey status: we initialize an instance variable `@travelling = false` and placed it inside the `in_journey?` method to make it always return true or false. Touch_in method will change it to true and touch_out back to false.
 
 **What I've Learnt:**
->**Predicate Methods:** they end with "?" and return either true or false. 
+>**Predicate Methods:** they end with "?" and return either true or false.<br/>
+
+
 >**Branches in Git:** process to create a new branch from your command line:
 1. Pull changes so your master is up to date
 2. Create the branch on your local machine and switch in this branch:
