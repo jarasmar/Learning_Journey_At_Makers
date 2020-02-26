@@ -37,10 +37,9 @@ plane = double("new plane")
 <br>
 
 ### AFTERNOON GOAL
-Practice Pair Programming and TDD
 
 **Plan:**
-1. Pair with Kuba and start working on the Oystercard Project.
+1. Pair with Kuba and practice TDD while start working on the Oystercard Project.
 2. Attend Process Workshop
 
 **Process:**<br/>
@@ -152,17 +151,39 @@ I am happy with my approach to TDD in this project, I managed to build all my co
 
 <br>
 
-### AFTERNOON GOAL
-This goal
+### AFTERNOON
 
 **Plan:**
-This Plan
+Pair with Liam and practice TDD working on the Oystercard Project
 
 **Process:**
-This and this
+- Create a new branch in the Github repository to work with a new pair without overwriting the previous work with a different collaborator.
+- Give the card the possibility to touch in and touch out and define an in-journey status: we initialize an instance variable `@travelling = false` and placed it inside the `in_journey?` method to make it always return true or false. Touch_in method will change it to true and touch_out back to false.
 
 **What I've Learnt:**
->**This:** blabla
+>**Predicate Methods:** they end with "?" and return either true or false. 
+>**Branches in Git:** process to create a new branch from your command line:
+1. Pull changes so your master is up to date
+2. Create the branch on your local machine and switch in this branch:
+```
+git checkout -b [name_of_your_new_branch]
+```
+3. Push the branch on github:
+```
+git push origin [name_of_your_new_branch]
+```
+4. When you want to commit something in your branch, be sure to be in your branch. You can see all the branches created by using :
+```
+git branch -a
+```
+5. Add a new remote for your branch:
+```
+git remote add [name_of_your_remote] [name_of_your_new_branch]
+```
+6. Push changes from your commit into your branch:
+```
+git push [name_of_your_new_remote] [url]
+```
 
 <br>
 
