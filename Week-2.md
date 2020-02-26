@@ -30,7 +30,7 @@ Peer code review of the weekend challenge.
 
 **What I've Learnt:**
 >**Test Doubles:** any object that stands in for a real object during a test (think "stunt double"). You create one using the double method. When creating a double, you can allow messages (and settheir return values) by passing a hash.
-```
+```rb
 plane = double("new plane")
 ```
 
@@ -174,7 +174,7 @@ git checkout -b [name_of_your_new_branch]
 ```
 git push origin [name_of_your_new_branch]
 ```
-4. When you want to commit something in your branch, be sure to be in your branch. You can see all the branches created by using :
+4. When you want to commit something in your branch, be sure to be in your branch. You can see all the branches created by using:
 ```
 git branch -a
 ```
