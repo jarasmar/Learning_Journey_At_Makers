@@ -251,13 +251,40 @@ end
 Practice Pairing and TDD
 
 **Plan:**
-Pair with Kate and keep working on the Oystercard Project
+Pair with Kate and keep working on the Oystercard Project.
 
 **Process:**
-This and this
+- Set a minimum balance to touch_in (create a constant `MIN_FARE = 1` and fail to touch_in if balance is lower)
+- Charge for the journey (at touch_out deduct MIN_FARE from balance. Set deduct as a private method)
+- Save the Entry station (update #touch_in to get name_station as an argument and save it as an instance variable. Make that variable go back to nil at touch_out)
+- Re-write in_journey? to depend on @entry_station (Use a double bang inside the method)
+```rb
+  def in_journey?
+    !!@entry_station  # converts @entry_station in a boolean (will return true for any value thats not nil/false)
+  end
+```
+- Save the Exit station
+- Create a Journey History (at #touch_out push a hash with @entry_station and @exit_station into the @journey_history array)
+```rb
+@journey_history << {:entry_station => @entry_station, :exit_station => @exit_station}
+```
+- Create a station class that initializes with name and zone.
 
 **What I've Learnt:**
->**This:** blabla
+>**Call a private Method from Rspec:** 
+```rb
+expect { subject.send(:deduct,5) }.to change{ subject.balance }.by -5
+```
+>**Double Bang:** When using the not-operator(!) we turn the data it’s operating on into a Boolean before negating it. A truthy value would become the Boolean false and a falsey value would become the Boolean true. <br/>
+When we add the second bang (!!) it flips the resultant Boolean back to the appropriate value: it will make a truthy value into the Boolean true and a falsey to false.
+```rb
+"hello"   #-> this is a string; it is not in a boolean context
+!"hello"  #-> this is a string that is forced into a boolean 
+          #   context (true), and then negated (false)
+!!"hello" #-> this is a string that is forced into a boolean 
+          #   context (true), and then negated (false), and then 
+          #   negated again (true)
+```
 
 <br>
 
