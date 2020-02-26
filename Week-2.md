@@ -191,24 +191,67 @@ git push [name_of_your_new_remote] [url]
 
 ## Wednesday 26th February 2020
 ### MORNING GOAL
-This goal
+- Learn how to give and receive feedback.
+- Get some understanding on how classes relate to each other.
 
 **Plan:**
-This Plan
+- Attend Dana's workshop.
+- Read OO_Relationships 1 (Forwarding).
 
 **Process:**
-This and this
+- Read about Forwarding relations in OO
+- Refactor some code with this premises.
+```rb
+class User
+
+  def initialize(name, bio, age, password)
+    @name = name
+    @bio = bio
+    @age = age
+    @authentication = Authenticate.new(password)   # Initializes the second class with the same argument
+  end
+
+  def authenticate(candidate_password)
+    @authentication.authenticate(candidate_password)   # Calls #authenticate from the second class which does the work
+  end
+
+  def profile
+    print "#{@name}, born in #{birth_year}: #{@bio}"
+  end
+
+  private
+
+  def birth_year
+    Time.new.year - @age
+  end
+end
+
+class Authenticate
+  def initialize(password)
+    @password = password
+  end
+
+  def authenticate(candidate_password)
+    return true if candidate_password == @password 
+    false
+  end
+
+end
+```
 
 **What I've Learnt:**
->**This:** blabla
+>**Feedback Types:** Appreciation (_conect, motivate, reassure, thank_), Evaluation (_rate against a set of standards_) and Coaching (_help receiver to expand Knowdledge or improve capability_).
+
+>**Forwarding:** In object-oriented programming, forwarding means that using a member of an object (either a property or a method) results in actually using the corresponding member of a different object: the use is forwarded to another object.
+
 
 <br>
 
 ### AFTERNOON GOAL
-This goal
+Practice Pairing and TDD
 
 **Plan:**
-This Plan
+Pair with Kate and keep working on the Oystercard Project
 
 **Process:**
 This and this
