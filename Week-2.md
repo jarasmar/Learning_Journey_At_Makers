@@ -349,6 +349,7 @@ Pair with Sri and keep working on the Oystercard Project.
 - Everytime we initialize a new card it will create a new `@journey_history = []` and a `@journey = Journey.new`.
 <br/>
 (_`#touch_in` will relate to `#start_journey` that will do its work and `#touch_out` will do the same with `#end_journey`_)
+
 ```rb
 class Oystercard
   def initialize
