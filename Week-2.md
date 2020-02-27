@@ -170,9 +170,9 @@ Pair with Liam and practice TDD working on the Oystercard Project
 ```
 git checkout -b [name_of_your_new_branch]
 ```
-3. Push the branch on github:
+3. Push the current branch and set the remote as upstream:
 ```
-git push origin [name_of_your_new_branch]
+git push --set-upstream origin sri_jara
 ```
 4. When you want to commit something in your branch, be sure to be in your branch. You can see all the branches created by using:
 ```
