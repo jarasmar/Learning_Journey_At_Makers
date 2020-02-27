@@ -343,10 +343,29 @@ Practice TDD and Pairing
 Pair with Sri and keep working on the Oystercard Project.
 
 **Process:**
-This and this
+- Refactor all the code to implement a new Journey class that will share methods with our Oystercard class.
+- Oystercard class will keep `#top_up`, `#touch_in`, `#touch_out` and `#deduct`.
+- Journey will get `#start_journey`, `#finish_journey` and `#in_journey?`
+- Everytime we initialize a new card it will create a new `@journey_history = []` and a `@journey = Journey.new`.
+<br/>
+(_`#touch_in` will relate to `#start_journey` that will do its work and `#touch_out` will do the same with `#end_journey`_)
+```rb
+class Oystercard
+  def initialize
+    @balance = 0
+    @journey = Journey.new
+    @journey_history = []
+  end
+  
+  def touch_in(entry_station)
+    fail "Not enough money in your card" if @balance < MIN_FARE
+    @journey.start_journey(entry_station)
+  end
+end
+```
 
 **What I've Learnt:**
->**This:** blabla
+>**attr_accessor:** it allows an instance variable to be read and written from a different class. (_We assigned it to our `@journey_history` array (Oystercard class) so we could push our `@current_journey` hash (Journey class) into it and then restore it back to empty everytime at `#touch_out`._)
 
 <br>
 
