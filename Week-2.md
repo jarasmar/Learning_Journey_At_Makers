@@ -347,7 +347,7 @@ Pair with Sri and keep working on the Oystercard Project.
 - Oystercard class will keep `#top_up`, `#touch_in`, `#touch_out` and `#deduct`.
 - Journey will get `#start_journey`, `#finish_journey` and `#in_journey?`
 - Everytime we initialize a new card it will create a new `@journey_history = []` and a `@journey = Journey.new`.
-<br/>
+
 (_`#touch_in` will relate to `#start_journey` that will do its work and `#touch_out` will do the same with `#end_journey`_)
 
 ```rb
