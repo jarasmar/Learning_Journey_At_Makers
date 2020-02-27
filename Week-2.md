@@ -290,24 +290,57 @@ When we add the second bang (!!) it flips the resultant Boolean back to the appr
 
 ## Thursday 27th February 2020
 ### MORNING GOAL
-This goal
+Understand more about relations between classes
 
 **Plan:**
-This Plan
+- Read OO_Relationships 1 (Polymorphism) and do the excercises.
+
 
 **Process:**
-This and this
+- Refactor the code to a Polymorphic pattern: originally a diary that will have two different ways of scrambling the text and its corresponding unscrumbling methods.
+- Create a class for each pair of scramble/unscramble techniques.
+- Create a Diary class that initializes with @content, and has a method scramble that takes the chosen scramble_technique_class name as an argument and scrambles the @content with that chosen method. Unscramble will also call the chosen class to decode the @content.
+```rb
+class ScrambledDiary
+  def initialize(contents)
+    @contents = contents
+  end
+
+  def scramble(scrambler_class)   # pass it to the chosen scrambler class
+    @contents = scrambler_class.new(@contents).scramble
+  end
+
+  def unscramble(unscrambler_class)
+    @contents = unscrambler_class.new(@contents).unscramble
+  end
+end
+
+class ScrambleByReversing
+  def initialize(contents)
+    @contents = contents
+  end
+
+  def scramble
+    p @contents = @contents.reverse
+  end
+
+  def unscramble
+  p  @contents = @contents.reverse
+  end
+end
+```
 
 **What I've Learnt:**
->**This:** blabla
+>**Polymorphism with Duck-Typing:** it refers to the ability to use functions or methods in different ways for different objects or data types. A polymorphic method will behave differently depending on the object that receives it’s message (it allows to send the same message to different objects and get different results). It greatly decreases the need for long, ugly if/else statements.<br/>
+(_It would be useful for a website that can be seen in different languages. Every language will be a different class, but will be basically doing the same. We will call the same methods but in a different language._)
 
 <br>
 
 ### AFTERNOON GOAL
-This goal
+Practice TDD and Pairing
 
 **Plan:**
-This Plan
+Pair with Sri and keep working on the Oystercard Project.
 
 **Process:**
 This and this
