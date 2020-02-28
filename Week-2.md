@@ -372,24 +372,37 @@ end
 
 ## Friday 28th February 2020
 ### MORNING GOAL
-This goal
+- Understand more about relations between classes
 
 **Plan:**
-This Plan
+- Go through the Skill-Workshop OOP 3: Delegate, Delegate, Delegate
+- Refactor the tests from Oystercard Project
 
 **Process:**
-This and this
+- This project contains two implementations of a todo list: /terrible and /great. <br/>
+/terrible implements the features using a poor understanding of the delegate principle. /great implements the users stories using a good understanding of the delegate principle but it is unfinished.
+- TodoList class will initialize with and `@todos = []` and have a method `#add` and `#set_complete` (delegating into Todo class) and a method `#to_string` (delegating into ListPrint class).
+- Todo class will have the functionalities that create every new item and save them into the list and that allows to mark them as completed.
+- ListPrint class will have the functionality to print all the items from the list as strings.
+<br/>
+- Oystercard Project: after moving all the code into two different classes many tests were failing. I created two spec files and distributed the tests to be executed within their own class methods.
 
 **What I've Learnt:**
->**This:** blabla
+>**Delegation:** one class tells another class to do something and the other class encapsulates how to do it.
+<br/>
+>**Steve Jobs:** _"Objects are like people. They’re living, breathing things that have knowledge inside them about how to do things and have memory inside them so they can remember things. And rather than interacting with them at a very low level, you interact with them at a very high level of abstraction, like we’re doing right here.
+
+Here’s an example: If I’m your laundry object, you can give me your dirty clothes and send me a message that says, “Can you get my clothes laundered, please.” I happen to know where the best laundry place in San Francisco is. And I speak English, and I have dollars in my pockets. So I go out and hail a taxicab and tell the driver to take me to this place in San Francisco. I go get your clothes laundered, I jump back in the cab, I get back here. I give you your clean clothes and say, “Here are your clean clothes.”
+
+You have no idea how I did that. You have no knowledge of the laundry place. Maybe you speak French, and you can’t even hail a taxi. You can’t pay for one, you don’t have dollars in your pocket. Yet I knew how to do all of that. And you didn’t have to know any of it. All that complexity was hidden inside of me, and we were able to interact at a very high level of abstraction. That’s what objects are. They encapsulate complexity, and the interfaces to that complexity are high level."_
 
 <br>
 
 ### AFTERNOON GOAL
-This goal
+Practice TDD and Pairing
 
 **Plan:**
-This Plan
+Pair with Ben and keep going with the Oystercard Project
 
 **Process:**
 This and this
