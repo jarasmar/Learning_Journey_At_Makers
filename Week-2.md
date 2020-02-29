@@ -168,11 +168,11 @@ Pair with Liam and practice TDD working on the Oystercard Project
 1. Pull changes so your master is up to date
 2. Create the branch on your local machine and switch in this branch:
 ```
-git checkout -b [name_of_your_new_branch]
+git checkout -b 'new_branch_name'
 ```
 3. Push the current branch and set the remote as upstream:
 ```
-git push --set-upstream origin sri_jara
+git push --set-upstream origin 'new_branch_name'
 ```
 4. When you want to commit something in your branch, be sure to be in your branch. You can see all the branches created by using:
 ```
