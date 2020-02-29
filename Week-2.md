@@ -376,7 +376,6 @@ end
 
 **Plan:**
 - Go through the Skill-Workshop OOP 3: Delegate, Delegate, Delegate
-- Refactor the tests from Oystercard Project
 
 **Process:**
 - This project contains two implementations of a todo list: /terrible and /great. <br/>
@@ -384,9 +383,6 @@ end
 - TodoList class will initialize with and `@todos = []` and have a method `#add` and `#set_complete` (delegating into Todo class) and a method `#to_string` (delegating into ListPrint class).
 - Todo class will have the functionalities that create every new item and save them into the list and that allows to mark them as completed.
 - ListPrint class will have the functionality to print all the items from the list as strings.<br/>
-
-- **Oystercard Project:** after moving all the code into two different classes many tests were failing. I created two spec files and distributed the tests to be executed within their own class methods.
-
 
 **What I've Learnt:**
 >**Delegation:** one class tells another class to do something and the other class encapsulates how to do it.
@@ -398,16 +394,16 @@ You have no idea how I did that. You have no knowledge of the laundry place. May
 <br>
 
 ### AFTERNOON GOAL
-Practice TDD and Pairing
+Practice TDD
 
 **Plan:**
-Pair with Ben and keep going with the Oystercard Project
+Keep going with the Oystercard Project
 
 **Process:**
-This and this
-
-**What I've Learnt:**
->**This:** blabla
+- Refactor the tests: after moving all the code into two different classes many tests were failing. I created two spec files and distributed the tests to be executed within their own class methods.
+- Add a PENALTY_FARE that would be deducted if we fail to `#touch_in` or `#touch_out`.
+- I created a `#fare` method that will work for `#deduct` by checking wether `@entry_station` or `exit_station` are nil and choose the right fare for `#deduct` to apply. (_So far I managed to make it work if we fail to `#touch_in` but not if we fail to `#touch_out`_)
+- I created a `#reset_journey` method that will put all the constant variables back to nil after a journey.
 
 <br>
 
