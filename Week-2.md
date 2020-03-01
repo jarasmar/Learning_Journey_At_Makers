@@ -411,8 +411,26 @@ Keep going with the Oystercard Project
 
 <br>
 
-## Weekend Challenge
-Description
+## Weekend Challenge: Takeaway Project
+```
+As a customer
+So that I can check if I want to order something
+I would like to see a list of dishes with prices
+
+As a customer
+So that I can order the meal I want
+I would like to be able to select some number of several available dishes
+
+As a customer
+So that I can verify that my order is correct
+I would like to check that the total I have been given matches the sum of the various dishes in my order
+
+As a customer
+So that I am reassured that my order will be delivered on time
+I would like to receive a text such as "Thank you! Your order was placed and will be delivered before 18:52" after I have ordered
+```
+
+You can see my project [here](https://github.com/jarasmar/takeaway-challenge).
 
 **Domain Model:**
 
@@ -427,9 +445,22 @@ Description
 | #checkout      |              | #print_order   | #twilio_text    |
 
 
+**My approach:**<br/>
+
+My main goal for this past week was learning class delegation and at the begining this was my main focus for the project. But while I was doing it with TDD I realized that although I felt more or less confortable with distributing the functionality between classes I had a very big gap with testing.<br/>
+
+I created all my code on a test-first basis but they were constantly breaking because I was not using Rspec mocking. At this point I decided that I wouldn't worry too much about completely finishing the project or adding extra fancy features (I was planning to add some more raising errors, and some loop to being asked for more dishes without calling the method everytime, ecc).<br/> 
+
+Instead I just did a basic working structure to cover the user stories. It all works in IRB but the SMS is not being sent. With the SMS I decided to focus more in understanding what Twilio was and setting it up, and in learning about environment variables to keep credentials safe. All this is in my code but the credentials stored in my .env file are not being loaded into the message.rb file (I quit at this point and didn't really tried to fix it so may be a very simple error).<br/>
+
+I still had almost all Sunday to keep working so I set myself the goal to, at least, get a minimum understanding of doubles and mocking. I really struggled (as it had happened all the week) to find information in google, as most of the tutorials I found were using code that was too difficult for me at this level (if I couldn't understand the Ruby syntax they were using leave alone understand mocking itself). But I happened to talk to one of my colleagues (Nima) and he gave me a very clarifying explanation with examples applied to this project (THANK YOU!). So with this new understanding I started all over the tests for restaurant class (restaurant_spec.rb) to make them all be based in mocking and be tested independently of any of the other classes existing or not. (The tests for the other classes are still as I had them before the enlightment :D)
+
+
 **What I've Learnt:**
->**Environment Variables:** blabla
->**.gitignore:** blabla
+>**Environment Variable:** is a variable whose value is set outside the program, typically through functionality built into the operating system (we can also create them inside the program in an special file called ".env" in the main folder). An environment variable is made up of a name/value pair: `MY_VARIABLE = value`. In the code you will access them with the name and at run it will be substituted with its value. It is a good practice to store authentication keys (only secure in server applications), group mail addresses, etc.
+
+>**.gitignore:** file in the top level repository where you add the names of all the files you don't want to commit to github, so it will not ask you all the time and you make sure you will not push something by error. File .env should be there so your credentials don't go online.
+
 
 <br>
 
@@ -441,21 +472,18 @@ Description
 # Weekend Reflections
 
 ### Did you meet all of your goals you set at the start of the week?
-* Answers here
+* My main goal was being able to manage classes and delegation, and I feel much more confortable with it.
 
 ### What things do you still need to work through?
-* Mocking
-* And this
+* Rspec Mocking
 
 ### What would you change/improve moving forward?
 ##### Technical: 
-* This
-* And this
+* I wish I had tried earlier to undertand doubles in Rspec as they are basic for consistency
+
 ##### Personal:
-* This
-* And this
+* I think I should try and be a bit more sociable, and speak with more people around me.
 
 ### A pat on the back
-* I added stretching to my morning routine and did it every day!!
-
+* I am happy with how I have managed to stay positive through all the week even if I struggled quite a lot a couple of days.
 <br>
