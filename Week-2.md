@@ -414,8 +414,21 @@ Keep going with the Oystercard Project
 ## Weekend Challenge
 Description
 
+**Domain Model:**
+
+| RESTAURANT     | MENU         | ORDER          | MESSAGE         |
+| :------------- |:-------------|:---------------|:----------------|
+|                | @menu_list   | @current_order | @phone_number   |
+|                |              | @total_price   | @message        |
+| :------------- |:-------------|:---------------|:----------------|
+| #see_menu      | #print_menu  | #add_dish      | #get_number     |
+| #place_order   |              | #sum_total     | #create_message |
+| #checkout      |              | #print_order   | #twilio_text    |
+
+
 **What I've Learnt:**
->**This:** blabla
+>**Environment Variables:** blabla
+>**.gitignore:** blabla
 
 <br>
 
