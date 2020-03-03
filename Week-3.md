@@ -61,11 +61,20 @@ Pair with Sophia and start going through the material in the afternoon challenge
 - `http URL` will print in the console the respond from the server
 - `http -v` flag will also print the GET request
 - We can send parameters (data sent from the user to the server) through the Query String (starts after the "?"). 
-- 
-- 
-- 
-- 
-- 
+`http://www.example.com/home?name=Bob&age=21` is taking two parameters, name and age.
+
+>You should now understand that clients - such as browsers, or command-line tools like HTTPie - can make requests for resources from servers. Those servers will respond with the resource, and some associated metadata. The resource itself is usually contained within the response body. The metadata is contained within the response headers. All of this communication is done via HTTP.
+
+- Sinatra: web framework that acts like a 'server' run from our computer. You can interact with a local server in the same way you would with a remote server, receiving and responding to HTTP requests.
+- Create a ruby file and `require "sinatra"` at the top of the file.
+- Run in your terminal `sinatra filename.rb` to activate the web framework.
+- Use a browser to visit your application at http://localhost:4567 (Nothing happens)
+- Create a path
+```rb
+get '/path' do
+  "Hello World"
+end
+``` 
 - Shotgun gem allows you to not manually restart the server everytime you change the code. The problem is that Shotgun will lose the current session everytime you close the console, to avoid this type `set :session_secret` at the top of your file.
 - You can return HTML directly with sinatra 
 ```rb
@@ -132,37 +141,32 @@ _Notice now `/named-cat` is a POST, it will only render after some interaction i
 - Chrometools: When seeing the website with inspect we can see a POST request for `/named-cat` (pulled by our form submitting) and a GET request that `/named-cat` does to reach the image.
 
 
-**What I've Learnt:**
->**This:** blabla
-
 <br>
 
 ## Tuesday 3rd March 2020
 ### MORNING GOAL
-This goal
+Understand mocking and request/response cycle a bit better.
 
 **Plan:**
-This Plan
+- Refactor some tests from the Takeaway challenge.
+- Attend workshop "Modelling the request/response cycle"
 
 **Process:**
-This and this
-
-**What I've Learnt:**
->**Bundle:** installs gems from gemfile
+- I managed to refactor the tests from my message and menu class to be fully independent from the other classes.
+- In the workshop we did sequence diagrams (with time lines) of some basic HTML files.
 
 <br>
 
-### AFTERNOON GOAL
-This goal
+### AFTERNOON
 
 **Plan:**
-This Plan
+Pair with Orion and keep working on Battle Project.
 
 **Process:**
-This and this
+We went through yesterday's material again.
 
 **What I've Learnt:**
->**This:** blabla
+>**Bundle:** installs all the gems listed in a project gemfile.
 
 <br>
 
