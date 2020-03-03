@@ -148,7 +148,7 @@ This Plan
 This and this
 
 **What I've Learnt:**
->**This:** blabla
+>**Bundle:** installs gems from gemfile
 
 <br>
 
