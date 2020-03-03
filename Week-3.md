@@ -57,7 +57,76 @@ Learn some basic HTTP and getting started with Sinatra
 Pair with Sophia and start going through the material in the afternoon challenge.
 
 **Process:**
-- Review this tomorrow morning
+- Install httpie (command line tool to make HTTP requests)
+- `http URL` will print in the console the respond from the server
+- `http -v` flag will also print the GET request
+- We can send parameters (data sent from the user to the server) through the Query String (starts after the "?"). 
+- 
+- 
+- 
+- 
+- 
+- Shotgun gem allows you to not manually restart the server everytime you change the code. The problem is that Shotgun will lose the current session everytime you close the console, to avoid this type `set :session_secret` at the top of your file.
+- You can return HTML directly with sinatra 
+```rb
+get '/cat' do
+  'I am a string and next bit is a image'
+ "<div>
+  <img src='URL'>
+ </div>"
+```
+- You can add inline CSS to style your HTML `<div style='border: 3px dashed red'>`
+- Views: will separate Ruby and HTML to keep the code clean. Our Ruby file will be controlling concerns and .erb file (containing HTML) will be for presentation or view concerns.
+Example: our file `add.rb` calls HTML from `index.erb`:
+```rb
+get '/cat'
+  erb(:index)
+end
+```
+- ERB can return simple strings but can also interpolate ruby expressions within them with `<% %>`. The following will return a random name into the string:
+```
+<h1>My name is <%= ["Amigo", "Oscar", "Viking"].sample %></h1>
+```
+- Single Responsibility Principle: view should not be cluttered with complex Ruby experessions. Limit it to light conditionals (if/else) and light iterators (each).
+- Move the expression back to the controller, store it in an instance variable and interpolate it in the HTML: 
+```rb
+get '/random-cat' do
+  @name = ["Gato", "Conejo", "Osete"].sample
+  erb(:index)
+end
+```
+```html
+<h1> My name is <%=@name%> </h1>
+```
+- Params can send information from the client to the server in the _query string_ and you would be able to see it from the server logs. For example if we add a form to get user input and set the cat name, that input can be stored in a param in the query line.<br/>
+If our input is "bigotes" the URL will be: `http://localhost:9393/named-cat?cat_name=bigotes` and if we print `params` we could see this from the server logs: `{"cat_name" => "bigotes"}`
+```rb
+get '/named-cat' do
+  p params  # This will print the hash in the logs
+  @name = params[:cat_name]
+  erb(:index)
+end
+```
+- Using `<% if %>` within your view you can set a conditional to only render the name string if you actually have a name to put in it. If no name is given, the whole string will disappear.
+```html
+<% if @name %>
+<h1> My name is <%=@name%> </h1>
+<% end %>
+```
+>Our form allows a user to set their cat's name. It will construct a query string and make a request to /named-cat with that string appended. Sinatra will parse the query string to a params hash and use that to render the view. Sinatra will then respond with the rendered view as an HTML string. This process forms the basis of almost all web applications.
+
+- GET methods ask for a server resource while POST methods imply that the request is asking to modify a server resource. (Since we are setting an @name variable on the server with our request, it would seem more appropriate to use a POST request instead of a GET request.)
+
+
+
+-
+-
+-
+- POST ED PARAMS
+-CHROMETOOLS
+
+
+
 
 **What I've Learnt:**
 >**This:** blabla
