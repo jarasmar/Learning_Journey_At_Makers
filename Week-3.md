@@ -116,16 +116,20 @@ end
 >Our form allows a user to set their cat's name. It will construct a query string and make a request to /named-cat with that string appended. Sinatra will parse the query string to a params hash and use that to render the view. Sinatra will then respond with the rendered view as an HTML string. This process forms the basis of almost all web applications.
 
 - GET methods ask for a server resource while POST methods imply that the request is asking to modify a server resource. (Since we are setting an @name variable on the server with our request, it would seem more appropriate to use a POST request instead of a GET request.)
+- If we change our form to a different file and direct its action towards `/named-cat`, we can get a new path that leads only to the form, and once we submit a name (POST) will render the `/named-cat` (that will do a GET request for the image). 
+```rb
+post '/named-cat' do
+  @name = params[:cat_name]
+  erb(:index)
+end
 
+get '/cat-form' do
+  erb(:cat_form)
+end
+```
+_Notice now `/named-cat` is a POST, it will only render after some interaction is done, like a confirmation page._
 
-
--
--
--
-- POST ED PARAMS
--CHROMETOOLS
-
-
+- Chrometools: When seeing the website with inspect we can see a POST request for `/named-cat` (pulled by our form submitting) and a GET request that `/named-cat` does to reach the image.
 
 
 **What I've Learnt:**
