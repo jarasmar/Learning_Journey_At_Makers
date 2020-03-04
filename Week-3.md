@@ -56,7 +56,7 @@ Learn some basic HTTP and getting started with Sinatra
 **Plan:**
 Pair with Sophia and start going through the material in the afternoon challenge.
 
-**Process:**
+**Process: HTTP, Sinatra and Capybara**
 - Install httpie (command line tool to make HTTP requests)
 - `http URL` will print in the console the respond from the server
 - `http -v` flag will also print the GET request
@@ -65,7 +65,8 @@ Pair with Sophia and start going through the material in the afternoon challenge
 
 >You should now understand that clients - such as browsers, or command-line tools like HTTPie - can make requests for resources from servers. Those servers will respond with the resource, and some associated metadata. The resource itself is usually contained within the response body. The metadata is contained within the response headers. All of this communication is done via HTTP.
 
-- Sinatra: web framework that acts like a 'server' run from our computer. You can interact with a local server in the same way you would with a remote server, receiving and responding to HTTP requests.
+- **Sinatra:**<br/>
+Web framework that acts like a 'server' run from our computer. You can interact with a local server in the same way you would with a remote server, receiving and responding to HTTP requests.
 - Create a ruby file and `require "sinatra"` at the top of the file.
 - Run in your terminal `sinatra filename.rb` to activate the web framework.
 - Use a browser to visit your application at http://localhost:4567 (Nothing happens)
@@ -140,6 +141,15 @@ _Notice now `/named-cat` is a POST, it will only render after some interaction i
 
 - Chrometools: When seeing the website with inspect we can see a POST request for `/named-cat` (pulled by our form submitting) and a GET request that `/named-cat` does to reach the image.
 
+- **Capybara**<br/>
+Automated browser, which can act the same as normal browsers (Chrome, Mozilla...) but with the difference that it is able to receive instructions programmatically, not just from mouse clicks or keyboard presses. We write this instructions in Ruby, using Capybara as an add-on to RSpec to compose our instructions. (It needs Mozilla Firefox to work).
+- List capybara and selenium-webdriver in a Gemfile.
+- Install Firefox GeckoDriver: `brew install geckodriver`
+- Open up PRY and require both capybara/dsl and selenium-webdriver.
+- Within the REPL, $ include Capybara::DSL.
+- Set Capybara's default driver to be selenium: `Capybara.default_driver = :selenium `
+- Go through [Capybara Workout](http://capybaraworkout.herokuapp.com/) and see how you can interact with a website through PRY or IRB in your command line.
+
 
 <br>
 
@@ -172,30 +182,39 @@ We went through yesterday's material again.
 
 ## Wednesday 4th March 2020
 ### MORNING GOAL
-This goal
+Validate learning on mocking
 
 **Plan:**
-This Plan
+- Attend Dana's workshop about empathy
+- Talk to a coach
 
-**Process:**
-This and this
-
-**What I've Learnt:**
->**This:** blabla
+**Validate Learning: Rspec Mocking:**
+I finished main refactoring on the tests of Takeaway challenge and went to talk to Josh in order to validate my learning.
+- All your classes should be fully tested independently.
+- Create doubles of every method or variable you need in your tests that belong to a different class.
+- Feature tests are vital in order to make sure that all your classes still work together (they will pass the unit tests even if they don't).
+- Domain models are also very important to make creating doubles easier (you know which classes functionalities you are going to require).
+- Add features to your program one at a time, building them through the different classes (Agile).
+- You can create your doubles at the top of your spec file,right after the `describe "Class" do` to make them available through all the file, or you can create a file to store all the doubles for your whole program and require it from the specs.
+- Stubbing doesn't create a double, it calls a double in an unit test.
+- Instance Doubles: help to verify your doubles, as the item being doubled actually needs to exist. So it gives additional confidence about things integrating, like feature tests (not necesary to do both).
+- We shouldn't be testing Gems functionality, like Twilio (thats their job, we just assume it is working). To test our txt sending method we can create a double of twilio. This is the normal way of testing external code (API, DB..) We can create a manual test to run every one and then to make sure their code actually work (just in case they may have changed that feature we are using for example), but there is no need to automatize it.
 
 <br>
 
-### AFTERNOON GOAL
-This goal
+### AFTERNOON
 
 **Plan:**
-This Plan
+Pair with Gareth and keep working on the Battle Challenge.
 
 **Process:**
-This and this
+- 
+- 
+
 
 **What I've Learnt:**
 >**This:** blabla
+
 
 <br>
 
