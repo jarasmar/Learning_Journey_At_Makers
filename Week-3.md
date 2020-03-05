@@ -278,32 +278,46 @@ post '/names' do
 end
 ```
 
-**What I've Learnt:**
->**This:** blabla
-
 
 <br>
 
 ## Thursday 5th March 2020
 ### MORNING GOAL
-This goal
+Improve debugging techniques.
 
 **Plan:**
-This Plan
+Attend Debugging Web Apps Workshop with Josh
 
-**Process:**
-This and this
+**Process:**<br/>
+**Approach errors:**
+1. See the list of error messages
+2. Pick one (unit test before feature tests)
+3.  Run rspec with the error path (shows only one error at a time)
+4. Read the error message
+5. Go to the file and line that the error is pointing (go to line command can do this with the path)
+6. Get paralel views of your code and your tests to see it as a whole
+7. Try to understand what the code does and what is being tested (look for the syntax that you don’t understand)
+8. Try an idea and see if error changes
+9. Zoom out when you do changes to see if the rest of tests for that code are still passing (your changes may break them)
+10. Look also at the website, if it works or the errors it shows
+11. Keep looping through steps 7-10  until the error is fixed
+<br/>
+**Tricks:**
+1. Look for bugs expecting the most common first and  then looking for more difficult posisibilities (Typos > Syntax error > undefined method…)
+2. Follow stack trace down (error may be coming from some other file)
+3. Git diff will display the changes since last commit, and the error is gonna be within those things that changed (this is only useful if you commit often, everytime something gets green)
+4. Give visibility
+
 
 **What I've Learnt:**
->**This:** blabla
+>**Srand:** method for tests, removes the randomness to make tests pass everytime.
 
 <br>
 
-### AFTERNOON GOAL
-This goal
+### AFTERNOON
 
 **Plan:**
-This Plan
+Pair with Peter and keep working on the Battle Project.
 
 **Process:**
 This and this
