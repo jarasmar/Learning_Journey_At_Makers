@@ -213,7 +213,7 @@ Pair with Gareth and start working on the Battle Challenge.
 ```rb
 require 'sinatra/base'
 
-class Battle < Sinatra::Base
+class Battle < Sinatra::Base    # Name of the main repo 
   get '/' do
     'Hello Battle!'
   end
@@ -240,7 +240,7 @@ require 'capybara/rspec'
 require 'rspec'
 
 # tell Capybara about our app class
-Capybara.app = Battle
+Capybara.app = Battle   # Name of the main repo 
 ```
 - Create a new directory "features" and create a spec file with your first feature test and make it pass.
 ```rb
