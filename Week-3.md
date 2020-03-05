@@ -170,7 +170,7 @@ Understand mocking and request/response cycle a bit better.
 ### AFTERNOON
 
 **Plan:**
-Pair with Orion and keep working on Battle Project.
+Pair with Orion and keep working on the preparation material for Battle Project.
 
 **Process:**
 We went through yesterday's material again.
@@ -205,12 +205,78 @@ I finished main refactoring on the tests of Takeaway challenge and went to talk 
 ### AFTERNOON
 
 **Plan:**
-Pair with Gareth and keep working on the Battle Challenge.
+Pair with Gareth and start working on the Battle Challenge.
 
 **Process:**
-- 
-- 
+- Start a new project creating a Gemfile with Sinatra, Capybara and Rspec.
+- Create a controller file `app.rb` and require sinatra at the top
+```rb
+require 'sinatra/base'
 
+class Battle < Sinatra::Base
+  get '/' do
+    'Hello Battle!'
+  end
+  
+  # start the server if ruby file executed directly
+  run! if app_file == $0
+end
+```
+- Create a `config.ru` file you can use to run your app.
+```
+require_relative './app'
+run Battle
+```
+- Run `rspec --init` to start writing your tests.
+- Edit your `spec_helper.rb` file:
+```rb
+ENV['RACK_ENV'] = 'test'
+
+# require our Sinatra app file
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+
+# tell Capybara about our app class
+Capybara.app = Battle
+```
+- Create a new directory "features" and create a spec file with your first feature test and make it pass.
+```rb
+feature 'Testing infrastructure' do
+  scenario 'Can run app and check page content' do
+    visit('/')
+    expect(page).to have_content 'Testing infrastructure working!'
+  end
+end
+```
+- Update the code for the user story: `We want to Start a fight by entering our names and seeing them`
+- Capybara feature test that expects players to fill in their names (in a form), submit that form, and see those names on-screen:
+```rb
+feature 'Enter names' do
+  scenario 'submitting names' do
+    visit('/')
+    fill_in :player_1_name, with: 'Dave'
+    fill_in :player_2_name, with: 'Mittens'
+    click_button 'Submit'
+    expect(page).to have_content 'Dave vs. Mittens'
+  end
+end
+```
+- Create the HTML form in `index.erb`, call it from the `get '/'` rout in `app.rb` and point the form to a new route `post '/names'`
+- `post '/names'` route uses params to render a play.erb view that displays the names.
+```rb
+get '/' do
+  erb :index
+end
+
+post '/names' do
+  @player_1_name = params[:player_1_name]
+  @player_2_name = params[:player_2_name]
+  erb :play
+end
+```
 
 **What I've Learnt:**
 >**This:** blabla
