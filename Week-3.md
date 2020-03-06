@@ -320,10 +320,73 @@ Attend Debugging Web Apps Workshop with Josh
 Pair with Peter and keep working on the Battle Project.
 
 **Process:**
-This and this
-
-**What I've Learnt:**
->**This:** blabla
+- Enable sessions in Sinatra: short-term information store that lives on the server. It's very small, but it allows the server to store basic pieces of information, like the name of the current user. In Sinatra, session is a Hash, and you can set values for its keys. session is most often used to store details of a logged in user.
+`enable :sessions`
+- In the post '/names' route, let's store the player names in the session instead of assigning them to instance variables. We will also redirect them to a new path.
+```rb
+post '/names' do
+  session[:plyr_1_name] = params[:player_1_name]
+  session[:plyr_2_name] = params[:player_2_name]
+  redirect '/play'
+end
+```
+- Now we can't access the values from our play.erb view, so we need to create a new path `/play` to store them in instance variables and render the view.
+```rb
+get '/play' do
+  @player_1_name = session[:plyr_1_name]
+  @player_2_name = session[:plyr_2_name]
+  erb :play
+end
+```
+- Feature test for next user story: "I want to see Player 2's Hit Points"
+```rb
+feature 'View hit points' do
+  scenario 'see Player 2 hit points' do
+    visit('/')
+    fill_in :player_1_name, with: 'Dave'
+    fill_in :player_2_name, with: 'Mittens'
+    click_button 'Submit'
+    expect(page).to have_content 'Mittens: 60HP'
+  end
+end
+```
+- Update our play.erb to display points too.
+- Our feature tests are getting longer and repeating themselves. In order to keep code DRY we can create a new file `spec/features/web_helpers.rb` and require it form `spec_helper.rb`
+- Define a method that will cover all the first steps:
+```rb
+def sign_in_and_play
+  visit('/')
+  fill_in :player_1_name, with: 'Dave'
+  fill_in :player_2_name, with: 'Mittens'
+  click_button 'Submit'
+end
+```
+- Substitute all this lines in your tests with a call to this method.
+```rb
+feature 'Enter names' do
+  scenario 'submitting names' do
+    sign_in_and_play
+    expect(page).to have_content 'Dave vs. Mittens'
+  end
+end
+```
+- Write a feature test for the user story: "I want to attack Player 2, and I want to get a confirmation"
+```rb
+feature 'Attacking' do
+  scenario 'attack Player 2' do
+    sign_in_and_play
+    click_link 'Attack'
+    expect(page).to have_content 'Dave attacked Mittens'
+  end
+end
+```
+- Add a link to your `play.erb` view and direct it to a new path `/attack` that will render a new view `attack.rb` with the confirmation message.
+```rb
+# in play.erb
+<form action="/attack">
+  <input type="submit" value="Attack">
+</form>
+```
 
 <br>
 
