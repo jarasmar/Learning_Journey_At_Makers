@@ -392,13 +392,15 @@ end
 
 ## Friday 6th March 2020
 ### MORNING GOAL
-This goal
+Practice with Web apps
 
 **Plan:**
-This Plan
+Work with the practical 'Build a greeter birthday app'
 
 **Process:**
-This and this
+- Your challenge is to build a web app that will ask the user for a name and birthday. When the user submits the form, and depending on the current date, the app will either: wish the user happy birthday or tell them how long they'll have to wait until their next birthday.
+- I created a first path rendering a form to get all the required information.
+
 
 **What I've Learnt:**
 >**This:** blabla
