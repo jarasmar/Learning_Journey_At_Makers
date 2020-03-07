@@ -410,13 +410,155 @@ Work with the practical 'Build a greeter birthday app'
 <br>
 
 ### AFTERNOON GOAL
-This goal
+Practice developing web apps.
 
 **Plan:**
-This Plan
+Pair with Ben and keep working on Battle Project.
 
 **Process:**
-This and this
+- Create a new Player class with a tested method that returns its name.
+- Require the Player class in your controller file, app.rb.
+- Instead of storing player names as strings in the session, store them as attributes of instances of the Player class in `$global_variables` (not a good use).
+```rb
+post '/names' do
+  $player_1 = Player.new(params[:player_1_name])
+  $player_2 = Player.new(params[:player_2_name])
+  redirect '/play'
+end
+
+get '/play' do
+  @player_1_name = $player_1.name
+  @player_2_name = $player_2.name
+  erb :play
+end
+
+get '/attack' do
+  @player_1_name = $player_1.name
+  @player_2_name = $player_2.name
+  erb :attack
+end
+```
+- Update your code to reference the new global variables.
+- Implement user story: "I want my attack to reduce Player 2's HP"
+```rb
+scenario 'My attack reduces player two HP by 10' do
+    sign_in_and_play
+    click_button 'Attack'
+    expect(page).to have_content "Bigotes: 90 HP"
+  end
+```
+- Update your player class to have a method that deducts points aftern an attack.
+```rb
+class Player
+  attr_reader :name, :points
+  DEFAULT_HP = 100
+
+  def initialize(name, points = DEFAULT_HP)
+    @name = name
+    @points = points
+  end
+  
+   def attack(player)
+    player.receive_damage
+  end
+
+  def receive_damage
+    @points -= 10
+  end
+end
+```
+- Inside the `/attack` path we add the `@player_1.attack(@player_2)` and in the play view we add the variable to display the current points: `<%= @player_2.name %>: <%= @player_2.points %>HP`
+- Single Responsability: create a new class game that will be responsible of the attack, while player only stores the points and names. (Move the attack method to that new class, but leave the receive_damage one).
+- Skinny controllers: we want our controllers to do nothing more than small amounts of routing logic. 
+- Make `Game.new` initialize with two `Player.new` and replace the players global variables with one `$game` that takes the name parameters at initalize.
+```rb
+class Game
+  def initialize(player_1, player_2)
+    @players = [player_1, player_2]
+  end
+
+  def player_1
+    @players[0]
+  end
+
+  def player_2
+    @players[1]
+  end
+```
+- Update `app.rb`
+```rb
+  post '/names' do
+    @player_1 = Player.new(params[:player1])
+    @player_2 = Player.new(params[:player2])
+    $game = Game.new(@player_1, @player_2)
+    redirect '/play'
+  end
+
+  get '/play' do
+    @current_game = $game
+    erb(:play)
+  end
+
+  get '/attack' do
+    @current_game = $game
+    @current_game.attack(@current_game.defender)
+    erb(:attack)
+  end
+  ```
+  - Finally change the views to take the new variable `@current_game`
+```rb
++<%= @current_game.player_1.name %> attacked <%= @current_game.player_2.name %>
+```
+- Integrate the user story: "As two players, we want to switch turns"
+- Change your Game class with an instance variable @turn and @defendent that will store the names of player 1 and 2, and a method to swith them after every attack.
+```rb
+def initialize(player_1, player_2)
+    @players = [player_1, player_2]
+    @turn = player_1
+    @defender = player_2
+  end
+
+  def player_1
+    @players[0]
+  end
+
+  def player_2
+    @players[1]
+  end
+
+  def attack(player)
+    player.receive_damage
+    switch_turn
+  end
+
+  def switch_turn
+    @turn, @defender = @defender, @turn # changes the order of the elements in an array
+  end
+```
+- Change your controller and your views to integrate this new changes. Call the names and points from either the @turn player or the @defendent player.
+```html
+# In the play view: attack button
+
+<p> It is <%= @current_game.turn.name %>'s turn to attack </p>
+<form action="/attack">
+    <input type="submit" value="Attack <%= @current_game.defender.name %>" id="Attack">
+</form>
+```
+
+```rb
+# in app.rb
+get '/attack' do
+   @current_game = $game
+   @current_game.attack(@current_game.defender)
+   erb(:attack)
+end
+```
+- Display a message when one player gets to 0HP "You are dead"
+```html
+<% if @current_game.turn.points == 0 %> <%= @current_game.turn.name %> is dead <% end %>
+ ```
+
+
 
 **What I've Learnt:**
 >**This:** blabla
@@ -458,6 +600,5 @@ Description
 * And this
 
 ### A pat on the back
-* I added stretching to my morning routine and did it every day!!
-
+* I 
 <br>
