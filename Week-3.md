@@ -405,7 +405,7 @@ Work with the practical 'Build a greeter birthday app'
 **What I've Learnt:**
 >**MVC:** (Model, View, Controller) software design pattern commonly used for developing user interfaces which divides the related program logic into three interconnected elements. Controller (app.rb) gives the paths and the actions, Model (ruby files) store the code and Views (erb files are what renders in the browser).
 
-![mvc](https://commons.wikimedia.org/wiki/File:MVC-Process.svg)
+![mvc](https://static.packt-cdn.com/products/9781783287987/graphics/7987OS_01_03.jpg)
 
 <br>
 
