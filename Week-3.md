@@ -257,10 +257,10 @@ end
 feature 'Enter names' do
   scenario 'submitting names' do
     visit('/')
-    fill_in :player_1_name, with: 'Dave'
-    fill_in :player_2_name, with: 'Mittens'
+    fill_in :player_1_name, with: 'Jara'
+    fill_in :player_2_name, with: 'Bigotes'
     click_button 'Submit'
-    expect(page).to have_content 'Dave vs. Mittens'
+    expect(page).to have_content 'Jara vs. Bigotes'
   end
 end
 ```
@@ -343,10 +343,10 @@ end
 feature 'View hit points' do
   scenario 'see Player 2 hit points' do
     visit('/')
-    fill_in :player_1_name, with: 'Dave'
-    fill_in :player_2_name, with: 'Mittens'
+    fill_in :player_1_name, with: 'Jara'
+    fill_in :player_2_name, with: 'Bigotes'
     click_button 'Submit'
-    expect(page).to have_content 'Mittens: 60HP'
+    expect(page).to have_content 'Bigotes: 60HP'
   end
 end
 ```
@@ -356,8 +356,8 @@ end
 ```rb
 def sign_in_and_play
   visit('/')
-  fill_in :player_1_name, with: 'Dave'
-  fill_in :player_2_name, with: 'Mittens'
+  fill_in :player_1_name, with: 'Jara'
+  fill_in :player_2_name, with: 'Bigotes'
   click_button 'Submit'
 end
 ```
@@ -366,7 +366,7 @@ end
 feature 'Enter names' do
   scenario 'submitting names' do
     sign_in_and_play
-    expect(page).to have_content 'Dave vs. Mittens'
+    expect(page).to have_content 'Jara vs. Bigotes'
   end
 end
 ```
@@ -376,7 +376,7 @@ feature 'Attacking' do
   scenario 'attack Player 2' do
     sign_in_and_play
     click_link 'Attack'
-    expect(page).to have_content 'Dave attacked Mittens'
+    expect(page).to have_content 'Jara attacked Bigotes'
   end
 end
 ```
@@ -399,11 +399,12 @@ Work with the practical 'Build a greeter birthday app'
 
 **Process:**
 - Your challenge is to build a web app that will ask the user for a name and birthday. When the user submits the form, and depending on the current date, the app will either: wish the user happy birthday or tell them how long they'll have to wait until their next birthday.
-- I created a first path rendering a form to get all the required information.
+- I created a first path rendering a form to get all the required information and send a post request redirected to a new path with an if/else conditional that would render the appropiate message depending on the date. (unfinished)
 
 
 **What I've Learnt:**
->**This:** blabla
+>**MVC:** (Model, View, Controller) software design pattern commonly used for developing user interfaces which divides the related program logic into three interconnected elements. Controller (app.rb) gives the paths and the actions, Model (ruby files) store the code and Views (erb files are what renders in the browser).
+[mvc]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller#/media/File:MVC-Process.svg "mvc model"
 
 <br>
 
