@@ -31,7 +31,7 @@
 **What I've Learnt:**
 >**this** blabla
 
-</br>
+<br>
 
 ## Tuesday 10th March 2020
 ### MORNING GOAL
@@ -53,7 +53,7 @@
 **What I've Learnt:**
 >**this** blabla
 
-</br>
+<br>
 
 ## Wednesday 11th March 2020
 ### MORNING GOAL
@@ -75,7 +75,7 @@
 **What I've Learnt:**
 >**this** blabla
 
-</br>
+<br>
 
 ## Thursday 12th March 2020
 ### MORNING GOAL
@@ -97,7 +97,7 @@
 **What I've Learnt:**
 >**this** blabla
 
-</br>
+<br>
 
 ## Friday 13th March 2020
 ### MORNING GOAL
