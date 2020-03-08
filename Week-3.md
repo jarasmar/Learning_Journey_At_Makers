@@ -561,7 +561,11 @@ end
 
 
 **What I've Learnt:**
->**This:** blabla
+>**Kill Sinatra processes:** 
+```
+lsof -wni tcp:9292  # this will show the PIDs
+kill -9 PID
+```
 
 <br>
 
@@ -569,11 +573,52 @@ end
 
 <br>
 
-## Weekend Challenge
-Description
+## Weekend Challenge: Rock, Paper, Scissors
+```
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
 
-**What I've Learnt:**
->**This:** blabla
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+
+the marketeer should be able to enter their name before the game
+
+the marketeer will be presented the choices (rock, paper and scissors)
+
+the marketeer can choose one option
+
+the game will choose a random option
+
+a winner will be declared
+```
+
+You can see my project [here](https://github.com/jarasmar/rps-challenge).
+
+**Domain Model:**
+
+| OPPONENT       | RESULT           |
+| :------------- |:-----------------|
+| -------------- |------------------|
+|                | @player_choice   | 
+|                | @opponent_choice | 
+|                | GAME_RULES       |
+| -------------- |------------------|
+| #random_move   | #win?            | 
+|                | #lose?           | 
+|                | #draw?           |
+|                | #check_result    |
+
+**Views Plan:**
+```
+get './'         -->  display index.erb (name input form)
+post './name'    -->  redirect to ./game
+get './game'     -->  display game.erb (three buttons to play)
+post './choice'  -->  redirect to ./result
+get './result'   -->  display result.erb (result of the game, and back to './game' button)
+```
+
 
 <br>
 
@@ -585,20 +630,18 @@ Description
 # Weekend Reflections
 
 ### Did you meet all of your goals you set at the start of the week?
-* Answers here
+* I am very happy with my progress this week, I managed to cover all the goals for this week and still got some extra practice in mocking, as it was pending from last week.
 
 ### What things do you still need to work through?
 * Mocking
-* And this
+* Understanding request/response, HTTP and the basics on how the web works.
+* Read CSS syntax to be able to style the pages quicker.
 
 ### What would you change/improve moving forward?
 ##### Technical: 
-* This
-* And this
-##### Personal:
-* This
-* And this
+* Make sure to always to tests first and don't get distracted from it by the new goals.
 
-### A pat on the back
-* I 
+##### Personal:
+* Start going to meditation regularly again.
+ 
 <br>
