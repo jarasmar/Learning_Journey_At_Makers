@@ -22,7 +22,6 @@ Set a working plan for the new week
 **Process:**
 - Review Anton code and give some appreciations/suggestions.
 - Improve my own code: I refactored some of the tests that were not passing but still not fully functioning.
-<br>
 - Attend week kick-off with Josh: introduction to databases.
 - Databases are the storage shelves of the digital world, keeping all our information.
 - Every database has a DBMS (Database Management System) which structures how we organize and interact with all our stored data. Four fundamental ways of interaction with databases: (CRUD)
@@ -39,8 +38,7 @@ Set a working plan for the new week
 3. Microsoft SQL
 4. PostgreSQL
 5. MongoDB (noSQL)
-<br>
-I started working through SQL Zoo to learn some basic query language (used to manage the data held in relational DBMS)
+- I started working through SQL Zoo to learn some basic query language (used to manage the data held in relational DBMS)
 ```
 # Show the population of Germany:
 SELECT population (category-column) FROM world (table name)
