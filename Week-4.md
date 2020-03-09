@@ -65,6 +65,9 @@ SELECT name, population/area FROM world
  WHERE name IN ('China', 'Nigeria', 'France', 'Australia')
 ```
 
+**What I've Learnt:**
+>**SQL** (Structured Query Language) standard language used to communicate with a database. SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database.
+
 <br>
 
 ### AFTERNOON GOAL
@@ -74,9 +77,66 @@ Practice Databases
 Pair with Anton and start working on the afternoon project.
 
 **Process:**
+- User story: 
+```
+As a time-pressed user
+So that I can quickly go to web sites I regularly visit
+I would like to see a list of bookmarks
+```
+- Set up a web project
+  - Create a gemfile (rspec, capybara, sinatra, rubocop and simplecov)
+  - Initialize your rspec repos (spec, lib, features)
+  - Update your `spec_helper.rb` file.
+  - Create your controller `app.rb` (test-drive main path)
+  - Create a `config.ru` file
+- Write a feature test for viewing bookmarks at the /bookmarks route.
+- Refactor the code to use the View and Controller.
+```rb
+# in app.rb
 
-**What I've Learnt:**
->**this** blabla
+get '/bookmarks' do
+  @bookmarks = [
+            "http://www.makersacademy.com",
+            "http://www.destroyallsoftware.com",
+            "http://www.google.com"
+           ]
+
+  erb :'bookmarks/index'
+end
+```
+
+```html
+<!-- in views/bookmarks/index.erb -->
+
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= bookmark %></li>
+  <% end %>
+</ul>
+```
+- Test drive a refactor of the code to use a Model, that returns the list of bookmarks.
+```rb
+# in lib/bookmark.rb
+
+class Bookmark
+  def self.all
+    [
+      "http://www.makersacademy.com",
+      "http://www.destroyallsoftware.com",
+      "http://www.google.com"
+     ]
+  end
+end
+```
+```rb
+# in app.rb
+
+get '/bookmarks' do
+    @bookmarks = Bookmark.all
+    erb :'bookmarks/index'
+end
+```
+
 
 <br>
 
