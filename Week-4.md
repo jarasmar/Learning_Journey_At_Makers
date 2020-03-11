@@ -39,7 +39,7 @@ Set a working plan for the new week
 4. PostgreSQL
 5. MongoDB (noSQL)
 - I started working through SQL Zoo to learn some basic query language (used to manage the data held in relational DBMS)
-(Notes on Wednesday Morning)
+(Notes on Tuesday Morning)
 
 **What I've Learnt:**
 >**SQL** (Structured Query Language) standard language used to communicate with a database. SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database.
@@ -124,7 +124,88 @@ Practice SQL
 - Work on SQL Zoo
 
 **Process:**
-- Notes on Wednesday Morning.
+- Work on SQL Zoo taking notes on basic commands.
+
+```
+# Show one value from one item:
+SELECT population (category-column) FROM world (table name)
+  WHERE name (category-column) = 'Germany'
+```
+
+```
+# Show several values from several items:
+SELECT name, population FROM world
+  WHERE name IN ('Sweden', 'Norway', 'Denmark');
+```
+
+```
+# Show a value from items in a range:
+SELECT name, area FROM world
+  WHERE area BETWEEN 200000 AND 250000
+```
+
+```
+# Show values that include in their name: (Finish ‘%a’  or  Begin ‘a%’)
+SELECT name, population FROM world
+  WHERE name LIKE “%United%”		# NOT LIKE would exclude it
+```
+
+```
+# Show population density (division of two values)
+SELECT name, population/area FROM world
+```
+
+```
+# Inclusive OR: Show the countries that are big by area or big by population
+SELECT name, population, area FROM world
+WHERE area > 3000000 OR population > 250000000
+```
+
+```
+# Exclusive XOR: Show the countries that are big by area or big by population, but not both.
+# Australia has a big area but a small population, it should be included.
+SELECT name, population, area FROM world
+WHERE area > 3000000 XOR population > 250000000
+```
+
+```
+# Show population in South America in millions, round to two decimals 
+SELECT name, ROUND(population/1000000, 2) FROM world
+WHERE continent = 'South America'
+```
+
+```
+# Show when names and capital have the same number of characters
+SELECT name, capital FROM world
+ WHERE LENGTH(name) LIKE LENGTH(capital)
+```
+
+```
+# Show the name and the capital where the first letters of each match. 
+# Don't include countries where the name and the capital are the same word.
+#  You can use the function LEFT to isolate the first character.
+# You can use <> as the NOT EQUALS operator.
+
+SELECT name, capital FROM world
+WHERE LEFT(name,1) = LEFT(capital,1) 
+AND name <> capital
+```
+
+```
+# OR connector: Show the year, subject, and name of Physics winners for 1980 together with the Chemistry winners for 1984.
+SELECT yr, subject, winner FROM nobel
+WHERE subject = 'Physics' AND yr = '1980'
+OR subject = 'Chemistry' AND yr = '1984'
+```
+
+```
+# Show the 1984 winners and subject ordered by subject and winner name; but list Chemistry and Physics last.
+SELECT winner, subject FROM nobel
+ WHERE yr=1984
+ ORDER BY 
+ CASE WHEN subject IN ('Physics','Chemistry') THEN 1 ELSE 0 END,
+ subject, winner 
+```
 
 <br>
 
@@ -236,12 +317,82 @@ def self.all
   end
 end
 ```
+- TABLE PLUS: GUI (Graphical User Interface) to databases
+- Your database management system needs some information about your postgres server:
+  - Where it is: `localhost` (i.e. your PostgreSQL server is running 'backgrounded' on your local machine, on Port 5432)
+  - Required login details: Your computer's name as a username (or, you can find this out by listing databases in psql), and no password.
+  - What database it should start with: `bookmark_manager` database.
 
+- SETTING UP A TESTING ENVIRONMENT:  
+- Our tests will start failing if we make changes to our databases, as they expect certain content to be in them.
+- Create a test database, `bookmark_manager_test`, with a bookmarks empty table. 
+- Set up an Environment Variable to tell the application to use the right database each time, so that:
+  - When you run tests using rspec, bookmarks are read from the new bookmark_manager_test database.
+  - When you run the application locally, bookmarks are read from the bookmark_manager database.
 
+```rb
+# in spec/spec_helper.rb
 
+ENV['ENVIRONMENT'] = 'test'
+```
+- Fixing Unit Tests: this code will fill the empty test database to have the expected results.
+```rb
+describe '.all' do
+  it 'returns a list of bookmarks' do
+    connection = PG.connect(dbname: 'bookmark_manager_test')
+
+    # Add the test data
+    connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');")
+    connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.destroyallsoftware.com');")
+    connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.com');")
+
+    bookmarks = Bookmark.all
+
+    expect(bookmarks).to include('http://www.makersacademy.com')
+    expect(bookmarks).to include('http://www.destroyallsoftware.com')
+    expect(bookmarks).to include('http://www.google.com')
+  end
+end
+```
+- Tests should always run against an empty database so we need a script with a method that clears out the previous data before we run each test. (_We could've also used `DROP TABLE` instead of `TRUNCATE` to remove the full table_)
+```rb
+# in spec/setup_test_database.rb
+
+require 'pg'
+
+def setup_test_database
+  p "Setting up test database..."
+
+  connection = PG.connect(dbname: 'bookmark_manager_test')
+
+  # Clear the bookmarks table
+  connection.exec("TRUNCATE bookmarks;")
+end
+```
+- To make sure this runs automatically and clears the database everytime we run a test we can call the method from spec_helper.rb.
+```rb
+# in spec/spec_helper.rb
+
+require_relative './setup_test_database'
+
+ENV['ENVIRONMENT'] = 'test'
+
+RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database
+  end
+end
+
+### rest of the file ###
+```
+- Now all our tests will run into an empty database, so make sure you fill it up in each feature and unit test.
+- Update your database setup instructions to include the test database.
 
 **What I've Learnt:**
->**this** blabla
+>**Working environments:** It's normal to have multiple environments in applications. These might include:
+  - A development environment that runs locally on your computer, so you can click around it and work on it. (Development database is initially empty, runs locally in our computer and we can add to it locally)
+  - A production environment that runs remotely on someone else's computer, so other people on the internet can click around it. (Production database will contain the real data)
+  - A test environment that runs locally on your computer whenever you run your tests. It comes into being especially for your tests, and disappears straight after your tests finish. (Test database will be empty so we set up the data we need before running our tests)
 
 <br>
 
@@ -251,88 +402,7 @@ end
 **Plan:**
 
 **Process:**
-- Work on SQL Zoo taking notes on basic commands.
 
-```
-# Show one value from one item:
-SELECT population (category-column) FROM world (table name)
-  WHERE name (category-column) = 'Germany'
-```
-
-```
-# Show several values from several items:
-SELECT name, population FROM world
-  WHERE name IN ('Sweden', 'Norway', 'Denmark');
-```
-
-```
-# Show a value from items in a range:
-SELECT name, area FROM world
-  WHERE area BETWEEN 200000 AND 250000
-```
-
-```
-# Show values that include in their name: (Finish ‘%a’  or  Begin ‘a%’)
-SELECT name, population FROM world
-  WHERE name LIKE “%United%”		# NOT LIKE would exclude it
-```
-
-```
-# Show population density (division of two values)
-SELECT name, population/area FROM world
-```
-
-```
-# Inclusive OR: Show the countries that are big by area or big by population
-SELECT name, population, area FROM world
-WHERE area > 3000000 OR population > 250000000
-```
-
-```
-# Exclusive XOR: Show the countries that are big by area or big by population, but not both.
-# Australia has a big area but a small population, it should be included.
-SELECT name, population, area FROM world
-WHERE area > 3000000 XOR population > 250000000
-```
-
-```
-# Show population in South America in millions, round to two decimals 
-SELECT name, ROUND(population/1000000, 2) FROM world
-WHERE continent = 'South America'
-```
-
-```
-# Show when names and capital have the same number of characters
-SELECT name, capital FROM world
- WHERE LENGTH(name) LIKE LENGTH(capital)
-```
-
-```
-# Show the name and the capital where the first letters of each match. 
-# Don't include countries where the name and the capital are the same word.
-#  You can use the function LEFT to isolate the first character.
-# You can use <> as the NOT EQUALS operator.
-
-SELECT name, capital FROM world
-WHERE LEFT(name,1) = LEFT(capital,1) 
-AND name <> capital
-```
-
-```
-# OR connector: Show the year, subject, and name of Physics winners for 1980 together with the Chemistry winners for 1984.
-SELECT yr, subject, winner FROM nobel
-WHERE subject = 'Physics' AND yr = '1980'
-OR subject = 'Chemistry' AND yr = '1984'
-```
-
-```
-# Show the 1984 winners and subject ordered by subject and winner name; but list Chemistry and Physics last.
-SELECT winner, subject FROM nobel
- WHERE yr=1984
- ORDER BY 
- CASE WHEN subject IN ('Physics','Chemistry') THEN 1 ELSE 0 END,
- subject, winner 
-```
 
 **What I've Learnt:**
 >**this** blabla
