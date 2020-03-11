@@ -173,6 +173,71 @@ CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
   - Create the database using the psql command CREATE DATABASE bookmark_manager;
   - Connect to the database using the pqsl command \c bookmark_manager;
   - Run the query we have saved in the file 01_create_bookmarks_table.sql
+  
+- List any existing rows in the bookmarks table.
+```
+SELECT * FROM bookmarks;
+```
+- Create four link entries in the bookmarks table, with four URLs using an INSERT statement.
+```
+INSERT INTO bookmarks VALUES(1, 'http://www.makersacademy.com');
+```
+* We don't need to put key 1, because when we created the table we told the ID to be `SERIAL PRIMARY KEY` so PostgreSQL will figure out how to increment it on its own.
+- List the four entries using a SELECT statement.
+```
+SELECT * FROM bookmarks;
+```
+- Delete one of the links with a URL using a DELETE statement.
+```
+DELETE FROM bookmarks WHERE url = 'http://www.twitter.com';
+```
+- Update the http://askjeeves.com link to http://www.destroyallsoftware.com using an UPDATE statement.
+```
+UPDATE bookmarks SET url = 'http://www.destroyallsoftware.com' WHERE url = 'http://www.askjeeves.com';
+```
+- INTERACTING WITH POSTGRESQL FROM RUBY
+- Install the pg gem to your project.
+- Pg Documentation:
+```
+- The pg gem makes a PG object available in Ruby.
+- We can call connect on the PG object, passing in the database name.
+- This will return an object that we can send a query to, let's call that object connection.
+- To retrieve bookmarks from the database, we'll call exec on the connection object, passing in a query string.
+```
+- IRB testing pg:
+```
+require 'pg'
+ => true
+connection = PG.connect(dbname: 'bookmark_manager')
+ => #<PG::Connection:0x007fc9c79700e8>
+result = connection.exec('SELECT * FROM bookmarks')
+ => #<PG::Result:0x007fc9c7958628 status=PGRES_TUPLES_OK ntuples=3 nfields=2 cmd_tuples=3>
+2.4.1 :005 > result.each { |bookmark| p bookmark }
+{"id"=>"1", "url"=>"http://makers.tech"}
+{"id"=>"2", "url"=>"http://www.destroyallsoftware.com"}
+{"id"=>"3", "url"=>"http://www.google.com"}
+ => #<PG::Result:0x007fc9c7830cc8 status=PGRES_TUPLES_OK ntuples=3 nfields=2 cmd_tuples=3>
+ ```
+ 
+- Test drive an update to the .all method of your Bookmark model, to do the following:
+  - Use PG to connect to the PostgreSQL bookmark_manager database.
+  - Retrieve all bookmark records from the bookmarks table.
+  - Extract the URLs from the database response.
+```
+# in lib/bookmark.rb
+
+require 'pg'
+
+class Bookmark
+def self.all
+    connection = PG.connect(dbname: 'bookmark_manager')
+    result = connection.exec('SELECT * FROM bookmarks')
+    result.map { |bookmark| bookmark['url'] }
+  end
+end
+```
+
+
 
 
 **What I've Learnt:**
