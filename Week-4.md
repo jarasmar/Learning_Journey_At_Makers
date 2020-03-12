@@ -655,7 +655,7 @@ RESTful routing exposes the true nature of your web application: as a state mach
   - GET /bookmarks returns a webpage with 35 bookmarks
   - POST /bookmarks transitions the machine to a new state with 36 bookmarks, and returns a webpage with 36 bookmarks.
   - DELETE /bookmarks/4 transitions the machine to a new state with 35 bookmarks and returns a webpage with 35 bookmarks.
-- I was playing around with the excercises to understand and design RESTful routes [here](" https://sjmog.github.io/rest") 
+- I was playing around with the excercises to understand and design RESTful routes [here](https://sjmog.github.io/rest) 
 
 
 <br>
