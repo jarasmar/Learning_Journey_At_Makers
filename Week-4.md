@@ -419,7 +419,6 @@ I want to tag a student with many named tags
 - CRC Card (Class, Responsabilities, Collaborators).
 
 |         Student      |     Student        |
-|:---------------------|-------------------:|
 |----------------------|--------------------|
 |  RESPONSABILITIES    |   COLLABORATORS    |
 |  Add student         |      Cohort        |
@@ -431,28 +430,28 @@ I want to tag a student with many named tags
 - Student DB Table: _id is a primary-key and cohort_id is a foreign key (comes from cohort table)_.
 
 |  id  |    name   |    URL   | cohort_id |
-|:-----|-----------|----------|----------:|
+|------|-----------|----------|-----------|
 |  1   |  'Jara'   |  "www..."|     2     |
 |  2   |  'Lukas   |  "www..."|     1     |
 
 Cohort DB Table: _relation 1:many (one cohort for many students)_
 
 |  id  |    cohort    |
-|:-----|-------------:|
+|------|--------------|
 |  1   |  "Jan 2020"  |
 |  2   |  "Feb 2020"  |
 
 - Tag DB Table: _relation many:many (a tag can get several students and students can get several tags) - No need to add keys in the main student table, it uses the join table_
 
 |  id  |     tag     |
-|:-----|------------:|
+|------|-------------|
 |  1   |    "Yoga"   |
 |  2   |   "Climb"   |
 
 - Student-Tag Join DB Table: _records the relations many:many between classes/tables.
 
 |  student_id  |    tag_id   |
-|:-------------|------------:|
+|--------------|-------------|
 |      1       |      1      |
 |      2       |      1      |
 |      2       |      2      |
@@ -468,8 +467,139 @@ Cohort DB Table: _relation 1:many (one cohort for many students)_
 ### AFTERNOON GOAL
 
 **Plan:**
+Pair with Rafa and keep working in the Bookmark challenge
 
 **Process:**
+- User Story: I want to add new bookmarks.
+- Create a feature test and make it pass updating your view (input form) and your controller: 
+```rb
+# in app.rb
+
+get '/bookmarks/new' do
+  erb :"/bookmarks/new"
+end
+
+post '/bookmarks' do
+  url = params['url']
+  connection = PG.connect(dbname: 'bookmark_manager')
+  connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
+  redirect '/bookmarks'
+end
+```
+- Now the controller is connecting to the Db and executing SQL, which should be done by the model. We can create a new method `#create` that will do this work.
+```rb
+# in lib/bookmark.rb
+
+def self.create(url:)
+  if ENV['ENVIRONMENT'] == 'test'
+    connection = PG.connect(dbname: 'bookmark_manager_test')
+  else
+    connection = PG.connect(dbname: 'bookmark_manager')
+  end
+
+  connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
+end
+```
+- Now our controller looks much better:
+```rb
+post '/bookmarks' do
+  Bookmark.create(url: params['url'])
+  redirect '/bookmarks'
+end
+```
+- We can use this new method to refactor all our long tests too.
+- CONNECTION BETWEEN A DATABASE AND AN APP: 'Object-Relational Map (ORM) Pattern'.
+- A normal connection between a database and an application mode works in this way:
+  - Bring database data from database rows into your Ruby application.
+  - Wrap each row from the table in Ruby objects, as an instance of a class.
+  - Ask a model to do things (methods) with the data it wraps.
+- Update the test and development databases so that bookmarks have a title, in addition to the url.
+``` 
+ALTER TABLE bookmarks ADD COLUMN title VARCHAR(60);
+```
+(Don't forget to add this line to the db/migrations folder in a different file `02_add_title_to_bookmarks.sql`)
+- Update the feature tests to expect having the titles linking to the URL.
+- Update the view to take title as a new input when creating a bookmark.
+- Update the controller to save the new param.
+```rb
+post '/bookmarks' do
+    title = params['title']
+    url = params['url']
+    Bookmark.create(title: title, url: url)
+    redirect '/bookmarks'
+  end
+```
+- Update unit tests and method `#create`.
+```rb
+ def self.create(url:, title:)
+     if ENV['ENVIRONMENT'] == 'test'
+       connection = PG.connect(dbname: 'bookmark_manager_test')
+     else
+       connection = PG.connect(dbname: 'bookmark_manager')
+     end
+
+     connection.exec("INSERT INTO bookmarks (title, url) VALUES('#{title}', '#{url}') RETURNING id, url, title")
+  end
+```
+- Update the main view with a list of bookmarks so we only see the titles that link to the URLs.
+```HTML
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li>
+      <a href="<%= bookmark.url %>">
+        <%= bookmark.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+````
+- The HTML indicates that we need to make sure that each bookmark is an object that responds to url and title. At the moment, each bookmark is a string. So, we need to:
+  - Get the result object from the database
+  - Wrap it in a Bookmark instance
+  - Make sure that Bookmark instance responds to id and url.
+- Change your Bookmark class to take three parameters that we retrieve from the database:
+```rb
+class Bookmark
+
+  attr_reader :id, :title, :url
+
+  def initialize(id:, title:, url:)
+    @id  = id
+    @title = title
+    @url = url
+  end
+
+  ### rest of the class ###
+end
+```
+- Update the `#all` method:
+```rb 
+def self.all
+  if ENV['ENVIRONMENT'] == 'test'
+    connection = PG.connect(dbname: 'bookmark_manager_test')
+  else
+    connection = PG.connect(dbname: 'bookmark_manager')
+  end
+  result = connection.exec("SELECT * FROM bookmarks")
+  result.map do |bookmark|
+    Bookmark.new(id: bookmark['id'], title: bookmark['title'], url: bookmark['url'])
+  end
+end
+```
+- Update `#create` to wrap the data too:
+```rb
+def self.create(url:, title:)
+  return false unless is_url?(url)
+  if ENV['ENVIRONMENT'] == 'test'
+    connection = PG.connect(dbname: 'bookmark_manager_test')
+  else
+    connection = PG.connect(dbname: 'bookmark_manager')
+  end
+  result = connection.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}') RETURNING id, title, url;")
+  Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
+end
+```
+
 **What I've Learnt:**
 >**this** blabla
 
