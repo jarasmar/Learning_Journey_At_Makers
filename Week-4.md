@@ -419,6 +419,7 @@ I want to tag a student with many named tags
 ```
 
 - CRC Card (Class, Responsabilities, Collaborators)
+
 |                 Student                   |
 |-------------------------------------------|
 |  RESPONSABILITIES    |   COLLABORATORS    |
@@ -429,29 +430,34 @@ I want to tag a student with many named tags
 
 
 - Student DB Table: _id is a primary-key and cohort_id is a foreign key (comes from cohort table_
+
 |  id  |    name   |    URL   | cohort_id |
 |-----------------------------------------|
 |  1   |  'Jara'   |  "www..."|     2     |
 |  2   |  'Lukas   |  "www..."|     1     |
 
 - Cohort DB Table: _relation 1:many (one cohort for many students)_
+
 |  id  |    cohort    |
 |---------------------|
 |  1   |  "Jan 2020"  |
 |  2   |  "Feb 2020"  |
 
 - Tag DB Table: _relation many:many (a tag can get several students and students can get several tags) - No need to add keys in the main student table, it uses the join table_
+
 |  id  |     tag     |
 |--------------------|
 |  1   |    "Yoga"   |
 |  2   |   "Climb"   |
 
 - Student-Tag Join DB Table: _records the relations many:many between classes/tables.
+
 |  student_id  |    tag_id   |
 |----------------------------|
 |      1       |      1      |
 |      2       |      1      |
 |      2       |      2      |
+
 (Jara does yoga and Lukas does yoga and climbing)
 
 
