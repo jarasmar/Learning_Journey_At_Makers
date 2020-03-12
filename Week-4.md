@@ -416,10 +416,11 @@ I want each student name's name to link to the URL of a picture of the student
 I want to tag a student with many named tags
 ```
 
-- CRC Card (Class, Responsabilities, Collaborators)<br>
+- CRC Card (Class, Responsabilities, Collaborators).
 
 |         Student      |     Student        |
 |:-----------------------------------------:|
+|-------------------------------------------|
 |  RESPONSABILITIES    |   COLLABORATORS    |
 |  Add student         |      Cohort        |
 |  Delete student      |      Url           |
@@ -427,7 +428,7 @@ I want to tag a student with many named tags
 |  Update student      |                    |
 
 
-Student DB Table: _id is a primary-key and cohort_id is a foreign key (comes from cohort table)_
+- Student DB Table: _id is a primary-key and cohort_id is a foreign key (comes from cohort table)_.
 
 |  id  |    name   |    URL   | cohort_id |
 |:---------------------------------------:|
