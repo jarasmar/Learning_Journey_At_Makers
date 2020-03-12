@@ -609,11 +609,54 @@ end
 ### MORNING GOAL
 
 **Plan:**
+- Review some theoric documentation provided for the week
 
 **Process:**
+- INSTANCE METHODS VS. CLASS METHODS
+- Instance Methods: provides functionality to one instance of a class.
+```rb
+class Foo
+  def bar
+    p 'This is an instance method'
+  end
+end
 
-**What I've Learnt:**
->**this** blabla
+foo = Foo.new
+#  => #<Foo:0x00007ffc4b073d80>
+foo.bar
+# => "This is an instance method" 
+```
+
+- Class Methods: provides functionality to a class itself.
+```rb
+class Foo
+  def self.bar
+    p 'This is a class method'
+  end
+end
+
+Foo.bar
+#  => "This is a class method" 
+
+foo = Foo.new
+#  => #<Foo:0x00007f9917849dd0>
+foo.bar
+# => NoMethodError (undefined method `bar' for #<Foo:0x00007f9917849dd0>)
+```
+- REST
+- Set of conventions for writing routes. Using REST will make your routes more manageable and professional-looking.
+RESTful routing exposes the true nature of your web application: as a state machine capable of being in a finite number of different states. Movements between the states are determined by user interactions, and are called state transitions:
+  - Having 35 bookmarks (state)
+  - Adding a bookmark (state transition)
+  - Having 36 bookmarks (state)
+  - Deleting a bookmark (state transition)
+  - Having 35 bookmarks (state)
+- For each of these, a RESTful route defines the next state of the machine, and the machine responds with the state it's now in:
+  - GET /bookmarks returns a webpage with 35 bookmarks
+  - POST /bookmarks transitions the machine to a new state with 36 bookmarks, and returns a webpage with 36 bookmarks.
+  - DELETE /bookmarks/4 transitions the machine to a new state with 35 bookmarks and returns a webpage with 35 bookmarks.
+- I was playing around with the excercises to understand and design RESTful routes [here](" https://sjmog.github.io/rest") 
+
 
 <br>
 
