@@ -400,12 +400,63 @@ end
 ### MORNING GOAL
 
 **Plan:**
-
+Attend Database Domain Modelling using CRC cards with Josh.
+|  id  |     name     |
+|---------------------|
+|  1   |  "May 2016"  |
 **Process:**
+- User stories:
+```
+As a coach
+So I can get to know all students
+I want to see a list of students' names
+
+I want to filter the list of students by cohort name
+
+I want each student name's name to link to the URL of a picture of the student
+
+I want to tag a student with many named tags
+```
+
+- CRC Card (Class, Responsabilities, Collaborators)
+|                 Student                   |
+|-------------------------------------------|
+|  RESPONSABILITIES    |   COLLABORATORS    |
+|  Add student         |      Cohort        |
+|  Delete student      |      Url           |
+|  Retrieve student    |      Tag           |
+|  Update student      |                    |
+
+
+- Student DB Table: _id is a primary-key and cohort_id is a foreign key (comes from cohort table_
+|  id  |    name   |    URL   | cohort_id |
+|-----------------------------------------|
+|  1   |  'Jara'   |  "www..."|     2     |
+|  2   |  'Lukas   |  "www..."|     1     |
+
+- Cohort DB Table: _relation 1:many (one cohort for many students)_
+|  id  |    cohort    |
+|---------------------|
+|  1   |  "Jan 2020"  |
+|  2   |  "Feb 2020"  |
+
+- Tag DB Table: _relation many:many (a tag can get several students and students can get several tags) - No need to add keys in the main student table, it uses the join table_
+|  id  |     tag     |
+|--------------------|
+|  1   |    "Yoga"   |
+|  2   |   "Climb"   |
+
+- Student-Tag Join DB Table: _records the relations many:many between classes/tables.
+|  student_id  |    tag_id   |
+|----------------------------|
+|      1       |      1      |
+|      2       |      1      |
+|      2       |      2      |
+(Jara does yoga and Lukas does yoga and climbing)
 
 
 **What I've Learnt:**
->**this** blabla
+>**Normalisation:** process where we take a table structure with repetition on it and we create new structures to avoid this repetitions. This way any change is made only in one place and automatically update everywhere else.
 
 <br>
 
