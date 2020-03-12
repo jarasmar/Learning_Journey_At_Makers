@@ -401,9 +401,7 @@ end
 
 **Plan:**
 Attend Database Domain Modelling using CRC cards with Josh.
-|  id  |     name     |
-|---------------------|
-|  1   |  "May 2016"  |
+
 **Process:**
 - User stories:
 ```
@@ -420,7 +418,7 @@ I want to tag a student with many named tags
 
 - CRC Card (Class, Responsabilities, Collaborators)<br>
 
-|                 Student                   |
+|         Student      |     Student        |
 |-------------------------------------------|
 |  RESPONSABILITIES    |   COLLABORATORS    |
 |  Add student         |      Cohort        |
@@ -429,14 +427,14 @@ I want to tag a student with many named tags
 |  Update student      |                    |
 
 
-- Student DB Table: _id is a primary-key and cohort_id is a foreign key (comes from cohort table)_<br>
+Student DB Table: _id is a primary-key and cohort_id is a foreign key (comes from cohort table)_
 
 |  id  |    name   |    URL   | cohort_id |
 |-----------------------------------------|
 |  1   |  'Jara'   |  "www..."|     2     |
 |  2   |  'Lukas   |  "www..."|     1     |
 
-- Cohort DB Table: _relation 1:many (one cohort for many students)_
+Cohort DB Table: _relation 1:many (one cohort for many students)_
 
 |  id  |    cohort    |
 |---------------------|
