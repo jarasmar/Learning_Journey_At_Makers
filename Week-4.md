@@ -663,10 +663,10 @@ RESTful routing exposes the true nature of your web application: as a state mach
 ### AFTERNOON GOAL
 
 **Plan:**
+Pair with John and keep working on the afternoon challenge.
 
 **Process:**
-**What I've Learnt:**
->**this** blabla
+We went over step 10 and 11 again, like wednesday afternoon.
 
 <br>
 
