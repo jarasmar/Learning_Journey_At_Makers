@@ -697,11 +697,96 @@ We went over step 10 and 11 again, like wednesday afternoon.
 
 <br>
 
-## Weekend Challenge
-Description
+## Weekend Challenge: Chitter
 
-**What I've Learnt:**
->**This:** blabla
+We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+
+You can see my whole project [here](https://github.com/jarasmar/chitter-challenge)
+
+**Features:**
+I did all the basic features and planned into the log_in and log_out ones but didn't have time to do them.
+
+```
+As a Maker
+So that I can let people know what I am doing  
+I want to post a message (peep) to chitter
+
+As a maker
+So that I can see what others are saying  
+I want to see all peeps in reverse chronological order
+
+As a Maker
+So that I can better appreciate the context of a peep
+I want to see the time at which it was made
+
+As a Maker
+So that I can post messages on Chitter as me
+I want to sign up for Chitter
+
+HARDER
+
+As a Maker
+So that only I can post messages on Chitter as me
+I want to log in to Chitter
+
+As a Maker
+So that I can avoid others posting messages on Chitter as me
+I want to log out of Chitter
+
+ADVANCED
+
+As a Maker
+So that I can stay constantly tapped in to the shouty box of Chitter
+I want to receive an email if I am tagged in a Peep
+```
+
+**Domain Model:**
+
+| CHITTER        | PEEP             | USER             |
+| :------------- |:-----------------|:-----------------|
+| -------------- |------------------|------------------|
+|                | @id              | @id              |
+|                | @peep            | @name            |
+|                | @post_time       | @username        |
+|                | @post_date       | @email           |
+|                |                  | @password        |
+| -------------- |------------------|------------------|
+| #print_peeps   | #time            | #valid_log_in    |
+| #post_peep     | #date            |                  |
+| #sign_up       |                  |                  |
+| #log_in        |                  |                  |
+| #log_out       |                  |                  |
+
+
+**Databases Plan:**
+
+- Table Peeps:
+
+|  id  |    peep   | post_time |  post_date | users_id  |
+|------|-----------|-----------|------------|-----------|
+|  1   |  'Hello'  |  13:25:00 | 2020-01-14 |     1     |
+|  2   |  'World'  |  17:05:00 | 2020-03-12 |     1     |
+
+- Table Users:
+
+|  id  |    name   |   username  |      email      |  password  |
+|------|-----------|-------------|-----------------|------------|
+|  1   |  'Dino'   | SuperCactus | dino@cactus.com | itsasecret |
+
+
+**Views Plan:**
+```
+get '/chitter'            -->  display chitter.erb (link to sign_up - link to log_in - peep list)
+get '/chitter/sign_up'    -->  display sign_up.erb (sign_up form)
+post '/chitter/sign_up'   -->  redirect to ./chitter/log_in (saves data to users table in DB)
+  # at this point redirects to '/chitter/user'
+get '/chitter/log_in'     -->  display log_in.erb (log_in form)
+post '/chitter/log_in'    -->  redirect to ./chitter/user (authenticates data)
+get '/chitter/user'       -->  display user.erb (link to log_out - link to post_peep - peep list)
+get '/chitter/post_peep'  -->  display post_peep.erb (post_peep form)
+post '/chitter/post_peep' -->  redirect to ./chitter/user (saves peep to peeps table in DB)
+post '/chitter/log_out'   -->  redirect to ./chitter (clears log_in data)
+```
 
 <br>
 
