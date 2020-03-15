@@ -671,14 +671,11 @@ We went over step 10 and 11 again, like wednesday afternoon.
 <br>
 
 ## Friday 13th March 2020
-### MORNING GOAL
+### MORNING 
 
-**Plan:**
+We had a special workshop on working remotely, to get ready for the school shutdown starting next week. We learned how to use Zoom to make videocalls and share screens to keep pairing and doing group work and also talked about different apps that allow to share information on real time.
 
-**Process:**
-
-**What I've Learnt:**
->**this** blabla
+The rest of the time I started planning and sketching on the weekend challenge.
 
 <br>
 
@@ -686,10 +683,11 @@ We went over step 10 and 11 again, like wednesday afternoon.
 
 **Plan:**
 
-**Process:**
-**What I've Learnt:**
->**this** blabla
+Pair with Neha and keep working on the Afternoon challenge.
 
+**Process:**
+
+- Added the User Story: I want to delete a bookmark.
 
 <br>
 
@@ -704,6 +702,7 @@ We are going to write a small Twitter clone that will allow the users to post me
 You can see my whole project [here](https://github.com/jarasmar/chitter-challenge)
 
 **Features:**
+
 I did all the basic features and planned into the log_in and log_out ones but didn't have time to do them.
 
 ```
@@ -798,19 +797,16 @@ post '/chitter/log_out'   -->  redirect to ./chitter (clears log_in data)
 # Weekend Reflections
 
 ### Did you meet all of your goals you set at the start of the week?
-* Answers here
+* Im very happy with my progress and how I am dealing with it but it has been a hard week with all the coronavirus issues and the school shutting down. I feel I have wasted a lot of energy in the process and have not been able to focus as much as other weeks. Even if I have understood everything I have been able to work through I have left quite a lot of important things behind as I didnt have enough time.
 
 ### What things do you still need to work through?
-* Mocking
-* And this
+* Relations between tables in databases.
+* Registration features for web apps.
 
 ### What would you change/improve moving forward?
-##### Technical: 
-* This
-* And this
+
 ##### Personal:
-* This
-* And this
+* I need to force myself to take enough breaks while working remotely.
 
 ### A pat on the back
 * I 
