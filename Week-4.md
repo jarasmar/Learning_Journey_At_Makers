@@ -807,7 +807,3 @@ post '/chitter/log_out'   -->  redirect to ./chitter (clears log_in data)
 
 ##### Personal:
 * I need to force myself to take enough breaks while working remotely.
-
-### A pat on the back
-* I 
-<br>
