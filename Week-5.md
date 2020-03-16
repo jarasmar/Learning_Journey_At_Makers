@@ -106,17 +106,52 @@ FizzBuzz.prototype._isDivisibleBy = function(divisor, number) {
   return number % divisor === 0;
 }
 ```
-  
 
 <br>
 
-### AFTERNOON GOAL
+### AFTERNOON
 
 **Plan:**
 
+Pair with Stephan and Georige and get started with the afternoon challenge 'Thermostat'.
+
 **Process:**
+- First steps of the proyect were translating FizzBuzz and Airport challenges to get a grip on Javascript and Jasmine syntax. We did fizzbuzz together and then have a quick look at the airport but decided to do it as solo work during the week.
+- We started with the first user story for Thermostat: `Thermostat starts at 20 degrees`
+- First we write the test:
+
+```javascript
+// spec/thermostatSpec.js
+
+'use strict';
+
+describe('Thermostat', function() {
+
+  var thermostat;
+
+  beforeEach(function() {
+    thermostat = new Thermostat();
+  });
+
+  it('starts at 20 degrees', function() {
+    expect(thermostat.temperature).toEqual(20);
+  });
+});
+```
+
+- And then the code:
+```javascript
+// src/thermostat.js
+
+'use strict';
+
+function Thermostat() {
+  this.temperature = 20;
+}
+```
+
 **What I've Learnt:**
->**this** blabla
+>**Strict Mode** blabla
 
 <br>
 
