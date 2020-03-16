@@ -13,7 +13,7 @@
 ## Monday 16th March 2020
 ### MORNING GOAL
 
-Get a main idea about what is JS
+Get a main idea about what is Javascript.
 
 **Plan:**
 - Pair review the weekend challenge
@@ -24,19 +24,21 @@ Get a main idea about what is JS
 
 I decided to invest the time I had left in the morning to have a quick look at all the resources available for the week and chose to begin with the 'Introduction to Javascript (and Jasmine)' learning pill, as I had no idea of what JS was about.
 
+The challenge is about setting up Jasmine and Javascript and translating our old project 'FizzBuzz' into this new language.
+
 - Jasmine is the testing framework for JS, I downloaded [here](https://github.com/jasmine/jasmine/releases) and installed the last version in my computer.
-- To use Jasmine in your own project create a new directory with the appropriate name, e.g. JavaBuzz and transfer over the lib directory intact.
+- To use Jasmine in your own project create a new directory with the appropriate name, e.g. FizzBuzz and transfer over the lib directory intact.
 ```
 cp -r ~/Downloads/jasmine-standalone-3.5.0/lib .
 ```
-- Now we need to create a test file, and a file for our code: `spec/JavabuzzSpec.js` and `src/Javabuzz.js`
+- Now we need to create a test file, and a file for our code: `spec/FizzbuzzSpec.js` and `src/Fizzbuzz.js`
 - To finish Jasmine setup create a file at your root directory `SpecRunner.html` with the following code:
 ```html
 <!-- include source files here... -->
-  <script type="text/javascript" src="src/Javabuzz.js"></script>
+  <script type="text/javascript" src="src/Fizzbuzz.js"></script>
 
   <!-- include spec files here... -->
-  <script type="text/javascript" src="spec/JavabuzzSpec.js"></script>
+  <script type="text/javascript" src="spec/FizzbuzzSpec.js"></script>
 ```
 - We are now ready to start testing!
 - This is the main structure for testing in Jasmine/JS: Function {} acts like Ruby's do/end
@@ -47,17 +49,19 @@ describe('', function() {
 
 });
 ```
-- Our final test should look something like this:
+- Our first test should look something like this:
 ```javascript
-describe('Javabuzz', function() {
+describe('FizzBuzz', function() {
 
-  var javabuzz;
+  var fizzbuzz;
+  
+  beforeEach(function() {
+    fizzbuzz = new FizzBuzz();
+  });
 
-  describe('knows when a number is', function() {
-
-    it('divisible by 3', function() {
-      javabuzz = new Javabuzz();
-      expect(isDivisibleByThree(3)).toBe(true);
+  describe('multiples of 3', function() {
+    it('fizzes for 3', function() {
+      expect(fizzbuzz.play(3)).toEqual('Fizz');
     });
 
   });
@@ -65,26 +69,44 @@ describe('Javabuzz', function() {
 });
 ```
 - Let's split it up:
-  - We give our described method a name 'JavaBuzz' (like the file we created, something like a class name in ruby)
+  - We give our described method a name 'FizzBuzz' (like the file we created, something like a class name in ruby)
   - Declare a variable inside the function block. It will be a local variable and it's only available withing the nearest {}. _If not declared it will look in every parent function and if still can't find any it will create it for you in the top level, but it will be a global variable, which is not a good practice_.
 ```javascript
-var javabuzz;
+var fizzbuzz;
 ```
   - Jasmine has no context blocks but we can open a new `describe` function with an `it`.
-  - We then need an instance of Javabuzz to test against so we create it inside out it block: _when we are instantiating our version of the class - we MUST add the `();`_
+  - We then need an instance of FizzBuzz to test against so we create it inside out it block: _when we are instantiating our version of the class - we MUST add the `();`_
   ```javascript
-   javabuzz = new Javabuzz();
+   fizzbuzz = new FizzBuzz();
   ```
   - Now we just need an expectation withing our it block:
   ```javascript
-  expect(isDivisibleByThree(3)).toBe(true);
+  expect(fizzbuzz.play(3)).toEqual('Fizz');
   ```
-- Our test is ready, but notice the methods are named with CamelCase in Javascript convention. Also it doesn't take `?` at the end of the method but instead puts `is` at the beggining.
+- Our test is ready, but notice the methods are named with CamelCase in Javascript convention.
+- Let's move into the code to make it pass: _this is the whole code for the program. It creates a first function `FizzBuzz` (in ruby this would be the class) and then two other functions depending on it (methods in ruby)._
+
+```javascript
+function FizzBuzz() {
+}
+
+FizzBuzz.prototype.play = function(number) {
+  if (this._isDivisibleBy(15, number)) {
+    return 'FizzBuzz';
+  } else if (this._isDivisibleBy(5, number)) {
+    return 'Buzz';
+  } else if (this._isDivisibleBy(3, number)) {
+    return 'Fizz';
+  } else {
+    return number;
+  }
+}
+
+FizzBuzz.prototype._isDivisibleBy = function(divisor, number) {
+  return number % divisor === 0;
+}
+```
   
-
-
-**What I've Learnt:**
->**this** blabla
 
 <br>
 
