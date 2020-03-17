@@ -107,13 +107,48 @@ FizzBuzz.prototype._isDivisibleBy = function(divisor, number) {
 }
 ```
 
+**What I've Learnt:**
+>**Functions:** they appear roughly equivalent to three concepts in Ruby: classes, blocks and methods, but it's not exactly like that, a function creates an object that can be called (invoked). 
+- There are no classes in JavaScript, but we do use functions as a convenient way to instantiate objects that share behaviour.
+```javascript
+function Dog(name) {
+  this.name = name;
+}
+
+var barney = new Dog('Barney');
+```
+- Anonymous functions work similar as blocks: _This is normally called a callback_
+```javascript
+var callback = function(arg) {
+  console.log(arg);
+};
+
+['one', 'two', 'three'].forEach(callback);
+```
+- Function to define methods:
+```javascript
+function Dog(name) {
+  this.name = name
+}
+
+Dog.prototype.bark = function() {
+  console.log(this.name + ' says Woof!')
+};
+
+# We can call bark in any instance of Dog
+
+fido = new Dog('fido');
+fido.bark();
+```
+_It's easy to think of bark as being a method of Dog. But it isn't. Objects in JavaScript are just bags of properties. So fido is just a bag of properties, some of which it inherits from the prototype of Dog. And bark is just a property that happens to contain a Function object. It behaves like a method because of the way it is invoked_
+
 <br>
 
 ### AFTERNOON
 
 **Plan:**
 
-Pair with Stephan and Georige and get started with the afternoon challenge 'Thermostat'.
+Pair with Stephan and George and get started with the afternoon challenge 'Thermostat'.
 
 **Process:**
 - First steps of the proyect were translating FizzBuzz and Airport challenges to get a grip on Javascript and Jasmine syntax. We did fizzbuzz together and then have a quick look at the airport but decided to do it as solo work during the week.
@@ -151,7 +186,7 @@ function Thermostat() {
 ```
 
 **What I've Learnt:**
->**Strict Mode** blabla
+>**Strict Mode** it makes us write higher standard JS as converts mistakes (that could be passed by without strict mode) into errors, so we can fix them in the moment instead of risking them causing problems in a future when it would be more difficult to find them. For example, it is impossible to create global variables by mistake in strict mode (if you mistype a variable in sloppy mode JS will just create that new object and keep working, but functionality might be affected).
 
 <br>
 
