@@ -192,13 +192,31 @@ function Thermostat() {
 
 ## Tuesday 17th March 2020
 ### MORNING GOAL
+Basisc of Javascript and Jasmine
 
 **Plan:**
+- Start translating airport challenge from Ruby to Javascript.
 
 **Process:**
 
+- For the first user story I decided to go straight away to the walkthrough to have an example of how classes were related to each other and how to use doubles. 
+```
+As an air traffic controller
+To get passengers to a destination
+I want to instruct a plane to land at an airport and confirm that it has landed.
+```
+
+- For the second user story I was trying to do every little step on my own, using the previous one as an example and then doublechecking or correcting from the walkthrough.
+```
+As an air traffic controller
+To get passengers to a destination
+I want to instruct a plane to take off from an airport and confirm that it is no longer in the airport
+```
+
 **What I've Learnt:**
->**this** blabla
+>**Create Spy Object** blabla
+
+>**This** blabla
 
 <br>
 
