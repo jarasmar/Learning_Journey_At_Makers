@@ -292,7 +292,23 @@ Thermostat.prototype.down = function() {
 **What I've Learnt:**
 >**Equality comparisons:** double equals (==) will perform a type conversion when comparing two things, and will handle NaN, -0, and +0. Triple equals (===) will do the same comparison as double equals but without type conversion; if the types differ, false is returned.
 
->**This Keyword:** blabalaka
+>**This Keyword:** As we could write, “John is running fast because **he** is trying to catch the train.” We could use 'John' again instead of 'he', so in a similar way we use the keyword 'this', as a shortcut, a referent; it refers to an object; that is, the subject in context, or the subject of the executing code.
+
+```javascript
+var person = {
+    firstName: "Penelope",
+    lastName: "Barrymore",
+    fullName: function () {
+        // Notice we use "this" just as we used "he" in the example sentence earlier?:
+        console.log(this.firstName + " " + this.lastName);
+    // We could have also written this:
+        console.log(person.firstName + " " + person.lastName);
+    }
+}
+```
+
+>If we use person.firstName and person.lastName, as in the last example, our code becomes ambiguous. Consider that there could be another global variable (that we might or might not be aware of) with the name “person.” Just like the pronoun “he” is used to refer to the antecedent (antecedent is the noun that a pronoun refers to), the this keyword is similarly used to refer to an object that the function (where this is used) is bound to. The this keyword not only refers to the object but it also contains the value of the object.
+
 
 <br>
 
