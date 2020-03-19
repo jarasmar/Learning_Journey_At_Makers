@@ -336,24 +336,36 @@ var myFather = new Person("John", "Doe", 50, "blue");
 var myMother = new Person("Sally", "Rally", 48, "green");
 ```
 
-- Constructor Prototype:
+- Prototype function: object that can add properties to the constructor function and enables all its objects to share those properties and methods.
+
+```javascript
+Person.prototype.sayName = function() {
+  console.log(this.firstName);
+}
+
+console.log(myFather.sayName()) => 'John'
+```
 
 
 - Then we paired and worked over some very similar code examples trying to guess which would be the output depending on the constructor-prototype patterns.
 
-
-**What I've Learnt:**
->**this** blabla
 
 <br>
 
 ### AFTERNOON GOAL
 
 **Plan:**
+Pair with Patrick and work over the Thermostat Project
 
 **Process:**
+-
+-
+
+
 **What I've Learnt:**
->**this** blabla
+>**JQuery:** is a JavaScript library that simplifies JS programming. It takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code. Contains the following features: HTML/DOM manipulation, CSS manipulation, HTML event methods, Effects and animations, AJAX and Utilities.
+
+>**APIs:** Application Programming Interface is a computing interface exposed by a particular software program, library, operating system or internet service, to allow third parties to use the functionality of that software application. The "API" referred to is not intended to extend the functionality of the source website or service, but merely to use it. 
 
 <br>
 
@@ -361,19 +373,35 @@ var myMother = new Person("Sally", "Rally", 48, "green");
 ### MORNING GOAL
 
 **Plan:**
+Attend workshop with Eoin: 'Following the flow and getting visibility'
 
 **Process:**
-
-**What I've Learnt:**
->**this** blabla
+- Following the flow: When debugging JavaScript we do something similar to the tightening the loop technique but with a different goal. Instead of trying to narrow in on one buggy line of code, you're just trying to understand what happens when a piece of code runs. 
+  - Typing little strings that you recognize with `console.log()`. Things in JS sometimes happen in unexpected order so it's good to know which is the actual running order by seeing the order in which these little strings are being printed.
+  - Using a step debugger: a program that runs your program and lets you step through your program line by line. _Run the program and go to the sources tab of the JS console_
+- Getting visibility: `console.log()`
+  - This: know what value `this` has in a piece of code `console.log(this);`.
+  - Variables: check that it contains what you expect `console.log(airport);`.
+  - Funtions: am I calling the right function? `console.log(airport.land);`.
+  - Function return values: is the function returning what I expect? `console.log(airport.land());`.
+  - Function parameters: does this parameter contain what I expect?
+  ```javascript
+  Airport.prototype.land = function(plane) {
+    console.log(plane);
+  }
+  ```
+- After explaining the basic concepts we paired up and worked debugging some FizzBuzz code that was broken.
 
 <br>
 
 ### AFTERNOON GOAL
 
 **Plan:**
+Plan with Will and work over Thermostat Project
 
 **Process:**
+We went over the same chapters I did yesterday: jQuery and APIs.
+
 **What I've Learnt:**
 >**this** blabla
 
