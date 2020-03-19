@@ -316,8 +316,31 @@ var person = {
 ### MORNING GOAL
 
 **Plan:**
+- Attend Workshop with Eoin: 'Encapsulation with constructor and prototype pattern'
 
 **Process:**
+- Constructor Function: creates several objects of the same 'type'.
+```javascript
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+```
+
+In this case you can create as many persons as you want giving those parameters:
+
+```javascript
+var myFather = new Person("John", "Doe", 50, "blue");
+var myMother = new Person("Sally", "Rally", 48, "green");
+```
+
+- Constructor Prototype:
+
+
+- Then we paired and worked over some very similar code examples trying to guess which would be the output depending on the constructor-prototype patterns.
+
 
 **What I've Learnt:**
 >**this** blabla
