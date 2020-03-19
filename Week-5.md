@@ -375,6 +375,10 @@ Pair with Patrick and work over the Thermostat Project
   - It returns the property temperature to default (20).
 - User story: 'You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25 is medium-usage, anything else is high-usage.'
   - Create a `energyUsage` protoype that with an if/else condition returns low, medium, or high comparing `this.temperature` to the levels.
+  
+- INTERFACE: HTML/CSS
+- Create all the elements you need to serve as controls and display data on the thermostat.
+- Add your `thermostat.js` file to your document in a `<script>`
 
 <br>
 
@@ -409,7 +413,57 @@ Attend workshop with Eoin: 'Following the flow and getting visibility'
 Plan with Will and work over Thermostat Project
 
 **Process:**
-We went over the same chapters I did yesterday: jQuery and APIs
+- JQUERY
+- Download jQuery [here](https://jquery.com/download/), store it with your HTML file and load it with a script.
+- Basic concepts:
+  - `$(document).ready(function() { })`: This function wraps the rest of the code so no events happen until the whole document has been loaded.
+  - jQuery selector: `$('element')` where 'element' is a CSS selector, or a tag name, classes, ids...
+  - Event listener: `$('element').on('event', function() {})` where 'event' is an action you would like to listen for on the page. Popular events include clicks, scrolls, typing and generally any kind of page interaction. The most popular ones generally have convenient shortcut functions, so you can write `$('element').click(function() { })`.
+  - Callbacks: anonymous function passed as last argument to the event handler. In this case, the callback is the function passed to the click function, that executes at some point in the future. The plain English translation would be "when there is a click on the element with the ID some-heading, run the function".
+  ```javascript
+  $('#some-heading').click(function() {
+    // this function is the callback!
+  })
+  ```
+- Back to our code, we firstly create a new instance of the thermostat object: `var thermostat = new Thermostat();` wrapped in the document loading function.
+- We start implementing every action that happens within our app following this flow: <br>
+**user input -> event listener -> update model -> update view to reflect change in model**
+```javascript
+$('#temp-up').on('click', function() { // event listener
+  thermostat.increaseTemperature(); // update model
+  $('#temperature').text(thermostat.temperature); // update view
+})
+```
+- Once it all works the way we want we implement the colour changes according to the energy usage.
+  - Delegate this functionality to the CSS: change the class name and let CSS assign a colour according to the class name.
+  - Our energyUsage function could return low, medium or high. 
+  - Give our temperature HTML id an attribute class with the value assigned to the return of that function. 
+  - Create three different CSS stylings to each of those class values, et voila.
+
+
+- APIs
+- Use a jQuery AJAX call to get the weather information for London from a weather API and display the weather information to the user.
+  - `$.get()` is shorthand for `$.ajax()`
+  - This function will get an url for the given city and return the data for temperature in Celsius as unit.
+```javascript
+function displayWeather(city) {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
+    var token = '&appid=a3d9eb01d4de82b9b8d0849ef604dbed';
+    var units = '&units=metric';
+    $.get(url + token + units, function (data) {
+      $('#current-temperature').text(data.main.temp);
+    });
+```
+
+- Add further functionality so that the user can select their current city and the weather provided is for the selected city.
+  - Create a select menu in HTML with an `id='current-city'` and the name of the city assigned as value to each option.
+  - This function will assign to a variable the value of the selected item in the menu and then pass it to the `displayWeather(city);` function.
+ ```javascript
+ $('#current-city').change(function(){
+    var city = $('#current-city').val();
+    displayWeather(city);
+  });
+ ```
 
 **What I've Learnt:**
 >**JQuery:** is a JavaScript library that simplifies JS programming. It takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code. Contains the following features: HTML/DOM manipulation, CSS manipulation, HTML event methods, Effects and animations, AJAX and Utilities.
