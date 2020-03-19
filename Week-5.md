@@ -358,14 +358,23 @@ console.log(myFather.sayName()) => 'John'
 Pair with Patrick and work over the Thermostat Project
 
 **Process:**
--
--
-
-
-**What I've Learnt:**
->**JQuery:** is a JavaScript library that simplifies JS programming. It takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code. Contains the following features: HTML/DOM manipulation, CSS manipulation, HTML event methods, Effects and animations, AJAX and Utilities.
-
->**APIs:** Application Programming Interface is a computing interface exposed by a particular software program, library, operating system or internet service, to allow third parties to use the functionality of that software application. The "API" referred to is not intended to extend the functionality of the source website or service, but merely to use it. 
+- User story: 'Power saving mode is on by default'
+  - Add a new property to our thermostat that makes `this.PSMOn` be true or false (default is true) and a method to get it `isPSMOn`.
+  - Add the posibility to switch it on and off with two new prototypes that change the property.
+  ```javascript
+  Thermostat.prototype.switchPSMOff = function() {
+    this.PSMOn = false;
+  };
+  ```
+- User story: 'If power saving mode is on, the maximum temperature is 25 degrees'.
+  - We need a loop to test this, making it press 'up' more than 5 times and still expecting that temperature remains at 25.
+  - We create a constant with the upper limit temperature with PSM on: `this.MAX_TEMP_PSM_ON = 25;`
+  - And we update the 'up' prototype in our code to break if current temperature is the limit one (so up will not work).
+- User story: 'If power saving mode is off, the maximum temperature is 32 degrees' (same process)
+- User story: 'You can reset the temperature to 20 with a reset function'
+  - It returns the property temperature to default (20).
+- User story: 'You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25 is medium-usage, anything else is high-usage.'
+  - Create a `energyUsage` protoype that with an if/else condition returns low, medium, or high comparing `this.temperature` to the levels.
 
 <br>
 
@@ -400,10 +409,12 @@ Attend workshop with Eoin: 'Following the flow and getting visibility'
 Plan with Will and work over Thermostat Project
 
 **Process:**
-We went over the same chapters I did yesterday: jQuery and APIs.
+We went over the same chapters I did yesterday: jQuery and APIs
 
 **What I've Learnt:**
->**this** blabla
+>**JQuery:** is a JavaScript library that simplifies JS programming. It takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code. Contains the following features: HTML/DOM manipulation, CSS manipulation, HTML event methods, Effects and animations, AJAX and Utilities.
+
+>**APIs:** Application Programming Interface is a computing interface exposed by a particular software program, library, operating system or internet service, to allow third parties to use the functionality of that software application. The "API" referred to is not intended to extend the functionality of the source website or service, but merely to use it. 
 
 <br>
 
