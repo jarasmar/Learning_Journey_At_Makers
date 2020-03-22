@@ -473,24 +473,36 @@ function displayWeather(city) {
 <br>
 
 ## Friday 20th March 2020
-### MORNING GOAL
-
-**Plan:**
+### MORNING
 
 **Process:**
-
-**What I've Learnt:**
->**this** blabla
+I worked on styling the view of Thermostat challenge with a CSS file.
 
 <br>
 
 ### AFTERNOON GOAL
 
 **Plan:**
+Pair with Luke and work on the last step of the challenge.
 
 **Process:**
+- Save the state of your thermostat so when we close and reopen the browser it remembers the last settings we had.
+- Build your own remote API with Sinatra that talks to your thermostat.
+- Create a postgreSQL database that stores the thermostat temperature and the power saving status.
+- Model: `saved_data.rb`
+  - Create a `class Saved_Data` with methods to retrieve and save data (with parameters) from the database.
+  - Everytime we save new data we want to delete the previous one as we don't need a history.
+- Controller: `app.rb`
+  - Create a path that renders the html view (`get '\'`), a path that calls the model to load the data (`get '/load'`) and a path that calls the model to save the data (`post '/save'`).
+- View: our pre existent front-end will be the view, HTML, CSS and JavaScript files.
+  - `Thermostat.js` will need a function save that sends a post request to our controller with the current values of the variables temperature and power saving. It also needs a load function that sends a get request, and converts the data from a web server (always a string), into a JavaScript object: `JSON.parse()`
+  - `interface.js` is modified to call our thermostat function 'save' in every event that modifies the temperature or power saving status, passing the current data.
+  ```javascript
+  thermostat.save(temperature, power_saving);
+
+
 **What I've Learnt:**
->**this** blabla
+>**JSON:** stands for JavaScript Object Notation and it is used to interchange data format. The JSON format is syntactically identical to the code for creating JavaScript objects, as name/value pairs. Because of this similarity, a JavaScript program can easily convert JSON data into native JavaScript objects. A common use of JSON is to read data from a web server, and display the data in a web page. (_Code for reading and generating JSON data can be written in any programming language_)
 
 
 <br>
@@ -499,11 +511,8 @@ function displayWeather(city) {
 
 <br>
 
-## Weekend Challenge
-Description
-
-**What I've Learnt:**
->**This:** blabla
+## Weekend
+I decided to took one day and a half free this weekend as I needed some rest after a very intense non-stop month. Sunday afternoon I took over the Thermostat challenge and worked on the saving state as on Friday we weren't able to make it work. After a few hours I managed to get the data from every app interaction saved in the database, but not loading it back. (_Notes on Friday afternoon_)
 
 <br>
 
@@ -515,20 +524,22 @@ Description
 # Weekend Reflections
 
 ### Did you meet all of your goals you set at the start of the week?
-* Answers here
+* I think the approach I had for learning JavaScript was quite good, focusing mostly in translating older projects,  but I feel like, even if it was useful, I missed some basis in raw syntax. Anyway I think I am now able to write a simple program in JavaScript, but googling almost every logical method I need to apply.
 
 ### What things do you still need to work through?
-* Mocking
-* And this
+* JavaScript Syntax
+* Jasmine Syntax
+* Connecting front-end to back-end
+* APIs and databases
 
 ### What would you change/improve moving forward?
 ##### Technical: 
-* This
-* And this
+* Put some time apart to learn some raw JavaScript syntax (arrays, hashes...)
+* Improve google search ability.
+
 ##### Personal:
-* This
-* And this
+* Try to do yoga everyday now that I'm home and have more flexibility in the schedule.
 
 ### A pat on the back
-* I 
+* I decided to have the weekend off to get some rest after a very intense month.
 <br>
