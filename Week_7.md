@@ -16,7 +16,7 @@ By the end of the week all developers can build tested, easy-to-change software 
 
 # Daily Goals
 
-## Monday 23rd March 2020
+## Monday 30th March 2020
 ### MORNING GOAL
 
 **Plan:**
@@ -38,7 +38,7 @@ By the end of the week all developers can build tested, easy-to-change software 
 
 <br>
 
-## Tuesday 24th March 2020
+## Tuesday 31st March 2020
 ### MORNING GOAL
 
 **Plan:**
@@ -60,7 +60,7 @@ By the end of the week all developers can build tested, easy-to-change software 
 
 <br>
 
-## Wednesday 25th March 2020
+## Wednesday 1st April 2020
 ### MORNING GOAL
 
 **Plan:**
@@ -82,7 +82,7 @@ By the end of the week all developers can build tested, easy-to-change software 
 
 <br>
 
-## Thursday 26th March 2020
+## Thursday 2nd April 2020
 ### MORNING GOAL
 
 **Plan:**
@@ -104,7 +104,7 @@ By the end of the week all developers can build tested, easy-to-change software 
 
 <br>
 
-## Friday 27th March 2020
+## Friday 3rd April 2020
 ### MORNING GOAL
 
 **Plan:**
