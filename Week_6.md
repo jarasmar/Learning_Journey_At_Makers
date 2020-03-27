@@ -118,7 +118,7 @@ Any signed-up user can request to hire any space for one night, and this should 
   - As a client, I can make a booking request for a room with an existing booking request that has not yet been approved. (maybe available)✅
 
 ### Domain Model
-![Domain Model](DomainModel.png)
+![Domain Model](DomainModelMakersBnB.png)
 
 ### Databases
 
