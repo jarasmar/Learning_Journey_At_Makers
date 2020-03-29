@@ -158,12 +158,80 @@ post '/book_space/:id'    -->  redirect to ./my_bookings/user (creates a new boo
 
 
 ## Weekend Challenge: Bowling
-Description
 
-**What I've Learnt:**
->**This:** blabla
+See the full project [here](https://github.com/jarasmar/bowling-challenge)
 
-<br>
+### The Task
+
+Count and sum the scores of a bowling game for one player (in JavaScript).
+
+A bowling game consists of 10 frames in which the player tries to knock down the 10 pins. In every frame the player can roll one or two times. The actual number depends on strikes and spares. The score of a frame is the number of knocked down pins plus bonuses for strikes and spares. After every frame the 10 pins are reset.
+
+### Domain Model
+- Constructor Function Game
+  - Initializes with `this.rolls = []`
+- Prototype Function `roll(pins)`
+  - Pushes pins into `this.rolls`
+- Prototype Function returnScore
+  - Initializes with a variable `score = 0` and `rollIndex = 0`
+  - Iterates 10 times over `this.rolls` and adds to the score depending on the pins and bonuses, checking for spares and strikes.
+
+
+### How does Bowling work?
+
+**Strikes**
+
+The player has a strike if he knocks down all 10 pins with the first roll in a frame. The frame ends immediately (since there are no pins left for a second roll). The bonus for that frame is the number of pins knocked down by the next two rolls. That would be the next frame, unless the player rolls another strike.
+
+**Spares**
+
+The player has a spare if the knocks down all 10 pins with the two rolls of a frame. The bonus for that frame is the number of pins knocked down by the next roll (first roll of next frame).
+
+**10th frame**
+
+If the player rolls a strike or spare in the 10th frame they can roll the additional balls for the bonus. But they can never roll more than 3 balls in the 10th frame. The additional rolls only count for the bonus not for the regular frame count.
+
+    10, 10, 10 in the 10th frame gives 30 points (10 points for the regular first strike and 20 points for the bonus).
+    1, 9, 10 in the 10th frame gives 20 points (10 points for the regular spare and 10 points for the bonus).
+
+**Gutter Game**
+
+A Gutter Game is when the player never hits a pin (20 zero scores).
+
+**Perfect Game**
+
+A Perfect Game is when the player rolls 12 strikes (10 regular strikes and 2 strikes for the bonus in the 10th frame). The Perfect Game scores 300 points.
+
+In the image below you can find some score examples.
+
+**Examples for the Tests:**
+
+- Gutter Game
+```
+-/- -/- -/- -/- -/- -/- -/- -/- -/- -/- = 0
+```
+- Spare Frame
+```
+5/5 3/- -/- -/- -/- -/- -/- -/- -/- -/- = 16
+```
+- Strike Frame
+```
+10 1/1 -/- -/- -/- -/- -/- -/- -/- -/- = 14
+```
+- Perfect Game
+```
+10 10 10 10 10 10 10 10 10 10 10 10 = 300
+```
+
+### Interface
+
+After I had all my tests passing and all the specifications covered I decided to do some front-end to practice everything I learned from Thermostat Project.
+I created an HTML table with ten frames that take roll_1, roll_2 and current score for each of them.
+It has a click button 'bowl' that plays a random frame at a time and keeps updating the score through each of them. After 10 frames, on the next click it pops out a message 'Game Over'.
+The interface is not fully conected to backend and there is no bonus added in the score.
+
+![img](images/app_screenshot.png)
+
 
 ***
 
