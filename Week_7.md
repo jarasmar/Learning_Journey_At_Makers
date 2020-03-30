@@ -72,6 +72,31 @@ Make a working plan for the week and start it.
   if (0 === 1) /*do nothing*/ ;
   alert ("hi");
   ```
+**JQuery Events:**
+- To set up an event handler we'll use a jQuery method called on. We'll usually pass one argument to on the name of the event we want to react to (a click for example) and a function to know what action to take when the event occurs. In the example we will be dynamically adding an element to a list on the page.
+```javascript
+// #add is the button's ID in HTML
+
+$('#add').on('click', function() {
+  var $newItem = $('<li>New item</li>')
+  $newItem.appendTo('.items');
+});
+```
+- When we create an element dynamically it has a problem: the click handler is loaded with the whole document, so all preexistent elements know how to behave, but those created dynamically doesnt (as the document is not being reloaded). 
+    - We need to nominate a responsible parent up the DOM tree. Body is always an option as it includes all the code, but you can also use some container that is closer, like the list in this case (we give it a class `items`).
+    - Make very new element created dynamically be appended to its parent (class item)
+    ```javascript
+    $(document).ready(function() {
+        $('#add').on('click', function() {
+            var $newItem = $('<li>New item</li>')
+            $newItem.appendTo('.items');
+        });
+    
+        $('.items').on('click', 'li', function() {
+            $(this).remove();
+        });
+    });
+    ```
 
 
 **What I've Learnt:**
