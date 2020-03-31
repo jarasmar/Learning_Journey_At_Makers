@@ -201,13 +201,23 @@ NoteListView.prototype.generateView = function() {
 
 ## Tuesday 31st March 2020
 ### MORNING GOAL
+Validate my approach for learning a new language.
 
 **Plan:**
 
-**Process:**
+Read through some of the resources on my list and talk to a coach about my approach.
+
+**Frontend Single Page App**
+- The essence of a frontend, single page app is that the browser never refreshes the page. 
+- Once the page loads, all changes happen by inserting HTML into the existing page.
+- When we do one action (like a click) the change is inserted into the page dynamically, not sent from a server after a request/response cycle and a page refresh.
+- We use `clickEvent.preventDefault()` to prevent the link action to refresh the page (which does by default).
+- It can also have a navigation architecture (a web of different pages):
+    - We make the link redirect to a new page that will display the action. The new URL will include a `#`
+    - Navigating to the new URL doesn't refresh the page so data is retained while navigating the different pages.
 
 **What I've Learnt:**
->**this** blabla
+>**ESlint** tool that can be plugged to your text editor and analyzes the code to quickly find problems and keep it consistent.
 
 <br>
 
