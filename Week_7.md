@@ -98,19 +98,104 @@ $('#add').on('click', function() {
     });
     ```
 
-
-**What I've Learnt:**
->**this** blabla
-
 <br>
 
 ### AFTERNOON GOAL
 
 **Plan:**
+Pair with Karla and start the Note App Project.
 
 **Process:**
-**What I've Learnt:**
->**this** blabla
+**Writing tests without a Testing Library:**
+- We can create a JavaScript file with functions that will act as tests for our model functions.
+- Use a script tag to add our test file in index.html
+- Run it in the browser and in the console you will see the fails.
+```javascript
+// circle-tests.js
+
+(function(exports) {
+  function testCircleRadiusDefaultsTo10() {
+    var circle = new Circle();
+
+    if (circle.radius !== 10) {
+      throw new Error("Circle size is not 10");
+    }
+  };
+
+  testCircleRadiusDefaultsTo10();
+})(this);
+```
+- This can be refactored to have a template function 'assert'
+```javascript
+// assert.js
+
+var assert = {
+  isTrue: function(assertionToCheck) {
+    if (!assertionToCheck) {
+      throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
+    }
+  };
+};
+
+// circle-tests.js
+
+function testCircleRadiusDefaultsTo10() {
+  var circle = new Circle();
+  assert.isTrue(circle.radius === 10);
+};
+
+testCircleRadiusDefaultsTo10();
+```
+
+**Module Pattern:**
+- A design pattern to encapsulate JavaScript code.
+- An Immediately-invoked Function Expression (IIFE) is a way to execute functions immediately, as soon as they are created.
+- They are very useful because they don’t pollute the global object, and they are a simple way to isolate or hide variables or function declarations. 
+```javascript
+// This is the syntax that defines a IIFE
+
+(function() {
+  /* */
+})()
+```
+- The code in an IFFE is 'hidden', none of the rest of the code can access any variables or functions inside the IIFE.
+- The module pattern is basically just an IIFE. But it uses a bit of extra code to export (or expose, or make available to the outside, or show) functions and variables that are part of the public interface of the module.
+```javascript
+(function(exports) {
+  var EXCLAMATION_MARK_COUNT = 5
+
+  function exclaim(string) {
+    return string + "!".repeat(EXCLAMATION_MARK_COUNT);
+  };
+
+  exports.exclaim = exclaim;
+})(this);
+```
+_`this` and `exports` are the global object. This means that adding exclaim onto exports is effectively making exclaim globally available._
+
+**Back to the Project**
+- Testing without a test library and wrapping all the code in the module pattern, use the contructor and prototype pattern to define a note model object that can be instantiated.
+- The note takes a text property upon instantiation (hardcoded for now).
+- Build a method that returns the text.
+- Create a new object that stores a list of notes (`noteList`) in an array.
+- Build a method that returns the contents of the array
+- Build a method that creates and stores a new note. It takes a string as an argument that would be the text for the new note. 
+- In order to display our notes we need to convert them into HTML.
+- Create a new object (`noteListView`) that instantiates with a `noteList`.
+- Build a method that returns a HTML string that represents the noteList.
+    - The noteList array doesnt contain only strings, so first we create a new array that only has the text of every note.
+    - Then we interpolate every string into the HTML pattern.
+```javascript
+NoteListView.prototype.generateView = function() {
+    var textArray = [];
+    for (var i = 0; i < this.noteList.noteList.length; i++) {
+      textArray.push(this.noteList.noteList[i].text);
+    }
+
+    return('<ul><li><div>' + textArray.join('</div></li><li><div>') + '</div></li></ul>');
+
+  }
+```
 
 <br>
 
