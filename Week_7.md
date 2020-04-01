@@ -269,7 +269,10 @@ $ node node_modules/http-server/bin/http-server
 ### MORNING GOAL
 
 **Plan:**
-Attend workshop on Module Pattern with Eoin.
+- Attend workshop on Module Pattern with Eoin.
+- Create a Diagram of the afternoon project
+
+![Diagram](images/NotesAppDiagram-Wednesday.png)
 
 <br>
 
