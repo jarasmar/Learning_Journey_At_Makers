@@ -224,10 +224,41 @@ Read through some of the resources on my list and talk to a coach about my appro
 ### AFTERNOON GOAL
 
 **Plan:**
+Plan with Nima and keep working on the afternoon challenge.
 
 **Process:**
+- Spike to create and serve an index.html page for your app:
+    - Create an index.html file containing the minimal HTML structure and add a div that has an id attribute set to app and contains the text hello.
+- Install Node JS
+- Install http-server from [NPM](https://www.npmjs.com/package/http-server). It is a small library that runs a local server to serve static assets like HTML, CSS and JavaScript. It's useful for serving a frontend website locally. Run it:
+```
+$ cd root/of/your-project/
+$ npm install http-server --save
+$ node node_modules/http-server/bin/http-server
+```
+- Go to [http://localhost:8080/](Go to http://localhost:8080/) in a browser to view your index.html page. It should say hello.
+
+- Spike code that inserts some HTML into the index.html page.
+    - Create a note-controller.js file and use a script tag to load it in your index.html file.
+    - Add code that gets hold of the app div element in your index.html page. console.log the element to be sure you've got it.
+    - Add code that can change the app greeting from 'hello' to 'howdy'.
+    - Visit http://localhost:8080 and check you can see 'howdy'.
+- Spike and then TDD code that shows a note in the index.html page
+- Create a file called note-controller.js and wrap all your code in module pattern.
+- Use constructor/prototype pattern to define a note controller that:
+    - Takes a note list model as a parameter.
+    - Adds a note that says 'Favourite drink: seltzer'.
+    - Creates a note list view, passing the note list model (generate HTML string).
+    - Make a method that gets the HTML from the note list view and inserts it into the app element.
+    
+
 **What I've Learnt:**
->**this** blabla
+
+>**Spike:** is a product-testing method originating from Extreme Programming that uses the simplest possible program to explore potential solutions. It is used to determine how much work will be required to solve or work around a software issue.
+
+>**Node JS:** it allows you to "build fast, scalable network applications" using Javascript on the server side. This means that if you choose the path of Javascript, you can become full-stack with a single language.
+
+>**NPM:** node based package manager, that will help you to organise and version control Node Packages on your machine and in your projects. Is the equivalent of Bundler from Ruby, as Node packages function in a similar way as Ruby gems.
 
 <br>
 
