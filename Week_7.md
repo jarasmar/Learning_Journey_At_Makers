@@ -250,6 +250,9 @@ $ node node_modules/http-server/bin/http-server
     - Adds a note that says 'Favourite drink: seltzer'.
     - Creates a note list view, passing the note list model (generate HTML string).
     - Make a method that gets the HTML from the note list view and inserts it into the app element.
+    ```javascript
+    document.getElementById('app').innerHTML = this.noteListView.generateView();
+    ```
     
 
 **What I've Learnt:**
@@ -266,21 +269,36 @@ $ node node_modules/http-server/bin/http-server
 ### MORNING GOAL
 
 **Plan:**
-
-**Process:**
-
-**What I've Learnt:**
->**this** blabla
+Attend workshop on Module Pattern with Eoin.
 
 <br>
 
 ### AFTERNOON GOAL
 
 **Plan:**
+Pair with George and work on the Notes App.
 
 **Process:**
-**What I've Learnt:**
->**this** blabla
+- TDD a single note view: (so it can be displayed in its own individual page)
+    - In a new file `single-note-view.js` TDD a SingleNote object that initializes with a note.
+    - Give it a method that takes that note and converts it to HTML (similar than the one that returns the whole list but for an individual note).
+    ```javascript
+    SingleNoteView.prototype.displayNote = function() {
+        return '<div>' + this.note.text + '</div>'
+    }
+    ```
+- Update your code so the main list of notes only shows the first 20 characters of each one.
+    - Modify the `generateView` method so that when it creates the HTML string joining all the note's texts into a table cuts them to 20 characters.
+    ```javascript
+    NoteListView.prototype.generateView = function() {
+
+    return('<ul><li><div>' + 
+    this.noteList.notes.map(note => note.text.slice(0, 20)).join('</div></li><li><div>') + 
+    '</div></li></ul>');
+
+    }
+    ```
+
 
 <br>
 
