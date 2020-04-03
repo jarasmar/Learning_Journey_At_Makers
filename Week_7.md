@@ -331,10 +331,31 @@ JavaScript is a single-threaded programming language which means only one thing 
 Pair with Daria and work on the Notes App.
 
 **Process:**
+- Give each note a single ID on creation: the index of the array.
+```javascript
+NoteList.prototype.create = function(text) {
+    var id = this.notes.length
+    var note = new Note(text, id);
+    this.notes.push(note);
+};
+```
+- Update the noteList view so that every note is displayed on its own URL but without any page refresh. Every element of the list in our HTML string will have a link tag that directs us to a new URL with the note ID.
+```html
+<li><div><a href='#notes/${note.id}'>${note.text.slice(0, 20)}</a></div></li>
+```
+- Load the full note on the new URL: use an eventListener for `hashchange` and when this happens it should change the content of the `note` element to be the text of the note.
+- Add an HTML form to create a new note (textarea and submit button). Intercept the button functionality (refresh) when clicking.
+```javascript
+form.addEventListener('submit', function(event) {
+   event.preventDefault();
+}
+```
+- Make your form extract the value from the textarea after submitting it, save it on a new note and update the `note` element so the new note is displayed in our list.
+
+- Make a basic CSS Layout
+![Layout](images/noteAppView.png)
 
 
-**What I've Learnt:**
->**this** blabla
 
 <br>
 
@@ -342,11 +363,15 @@ Pair with Daria and work on the Notes App.
 ### MORNING GOAL
 
 **Plan:**
+- Write notes about asynchronous JS
+- Update Readme from afternoon Project
 
 **Process:**
+- Updated Domain Model:
+![domain Model](images/NotesAppDiagram-Friday.png)
 
-**What I've Learnt:**
->**this** blabla
+You can see the full Notes App project [here](https://github.com/jarasmar/Notes_App)
+
 
 <br>
 
