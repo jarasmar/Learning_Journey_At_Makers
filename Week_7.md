@@ -368,9 +368,10 @@ form.addEventListener('submit', function(event) {
 
 **Process:**
 - Updated Domain Model:
+
 ![domain Model](images/NotesAppDiagram-Friday.png)
 
-You can see the full Notes App project [here](https://github.com/jarasmar/Notes_App)
+**You can see the full Notes App project [here](https://github.com/jarasmar/Notes_App)**
 
 
 <br>
