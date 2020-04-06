@@ -395,6 +395,8 @@ We went over the same steps I did yesterday.
 
 Your app will grab all the headlines from the Guardian newspaper API and display them on a page. Clicking on a headline will show a summary of the article.
 
+You can see the whole project [here](https://github.com/jarasmar/news-summary-challenge)
+
 **Technologies:** You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript. And, as is the theme for this week, you won't use any libraries or frameworks!
 
 **User Stories:**
@@ -436,7 +438,7 @@ To make my news reading more fun
 
 **Domain Model:**
 
-![Domain Model](NewsApp-Domain-Model.png)
+![Domain Model](/images/NewsApp-Domain-Model.png)
 
 **Current Status:**
 
@@ -459,20 +461,19 @@ To make my news reading more fun
 # Weekend Reflections
 
 ### Did you meet all of your goals you set at the start of the week?
-* Answers here
+* I am quite happy with my understanding of single page web apps.
 
 ### What things do you still need to work through?
-* Mocking
-* And this
+* Mocking in Javascript
+* APIs
 
 ### What would you change/improve moving forward?
 ##### Technical: 
-* This
-* And this
+* Try harder solving problems on my own before referring to other's solutions.
+
 ##### Personal:
-* This
-* And this
+* Go to sleep earlier to be more productive during the day
 
 ### A pat on the back
-* I 
+* I did quite a lot of yoga this week!
 <br>
