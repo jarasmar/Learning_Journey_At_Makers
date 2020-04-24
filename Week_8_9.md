@@ -99,36 +99,16 @@ I want to be able to like a comment
 
 <br>
 
-## Weekend Challenge
-Description
+# Weekend Challenge
 
-**What I've Learnt:**
->**This:** blabla
+Build a clone of Instagram
 
-<br>
+See the full project in [GitHub](https://github.com/jarasmar/instagram-challenge)
 
-***
+- Building: Ruby, Ruby on Rails, HTML, CSS, Bootstrap
+- Databases/Storage: Postgres, Amazon S3
+- Gems: Devise, Carrierwave
 
-<br>
+I didn't have a lot of time to work on this project as I was still working on Acebook. I mostly focused on the image uploading feature, as it was something I've never done before. I had some serious configuration issues changing Rails version and spiked all the code to save some time. So althought it was all over a good practice, this project has to be restarted from the beggining.
 
-
-# Weekend Reflections
-
-### Did you meet all of your goals you set at the start of the week?
-* Answers here
-
-### What things do you still need to work through?
-* Mocking
-* And this
-
-### What would you change/improve moving forward?
-##### Technical: 
-* This
-* And this
-##### Personal:
-* This
-* And this
-
-### A pat on the back
-* I 
 <br>
