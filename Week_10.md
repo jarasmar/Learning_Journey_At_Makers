@@ -2,9 +2,9 @@
 
 - Feel more confident in your ability to complete a tech test.
 - Develop a structured process to approaching complex problems, utilising TDD and good OO design skills.
-- Solve a challenging technical problem by writing well crafted code
+- Solve a challenging technical problem by writing well crafted code (well tested, easy to read and easy to change).
 
-_By "well crafted code", we mean code that is well tested, easy to read and easy to change._
+This week, you'll work solo to complete different technical challenges. A self assessment form will help you reflect on the quality of your code, and coaches will review your code once you believe you have achieved professional quality.
 
 <br>
 
