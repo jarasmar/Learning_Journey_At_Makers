@@ -21,6 +21,8 @@ This repository includes examples of my work, challenges completed, and the proc
   * I can justify the way I work
   * I grow collaboratively
 
+<br>
+
 ## My Makers Journal
 
 During my 12 weeks at Makers Bootcamp I have grown up both as a person and as a developer. 
