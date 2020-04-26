@@ -1,31 +1,36 @@
-# My Goals while at Makers
-This is my learning journey at Makers Academy.
+# Learning Journey
 
-It includes examples of my work, challenges completed, and the processes I have learnt and developed while working towards the following goals.
+This is my learning journey at Makers Academy. I started the online precourse 20th January 2020 and the onsite course in London 17th February. Unfortunately the school had to close due to Coronavirus crisis and we moved to a fully remote course one month later. This was challenging but add an extra value too, as it made us focus on knowdledge sharing amongst our cohort, online collaboration and pairing, ecc. Finally, 7th of May, is time for our Final Project Fair, and we are ready to start a new journey on our own.
 
-Click through to any of the Week.md links for more detail.
+This repository includes examples of my work, challenges completed, and the processes I have learnt and developed while working towards the following goals:
 
-## I can make software
-* I can TDD anything
-* I can program fluently
-* I can debug anything
-* I can model anything
-* I can refactor anything
-* I have a methodical approach to solving problems
+- **I can make Software:**
+  * Methodical approach to solving problems
+  * Planning and Modelling
+  * Test Driven Development
+  * Debugging
+  * Refactoring
 
-## I'm equipped for long term growth
+- **I am equiped for long term growth:**
+  * I manage my own wellbeing
+  * I can learn anything by myself
 
-* I manage my own wellbeing
-* I can learn anything by myself
-
-## I help my teams succeed
-
-* I use an agile product development process
-* I write code that is easy to change
-* I can justify the way I work
-* I grow collaboratively
+- **I help my teams succeed:**
+  * I use an agile product development process
+  * I write code that is easy to change
+  * I can justify the way I work
+  * I grow collaboratively
 
 ## My Makers Journal
+
+During my 12 weeks at Makers Bootcamp I have grown up both as a person and as a developer. 
+
+The table below has a summary of the following contents:
+- Goals: every week was designed to covered different knowdledge areas.
+- Projects: most of them are done in the afternoons, pairing with a different colleage everyday. (Weeks 6, 8, 9, 11 and 12 are group projects. Week 10 is individual work)
+- Weekend Challenges: designed to be done individually and to reinforce the knowdlege acquired during the week.
+- Journal: every day I wrote about my learning and challenges while at Makers. Descriptions of the projects and end of the week reflections.
+
 
 WEEK | GOALS | PROJECTS | WEEKEND CHALLENGE | JOURNAL
 :---:|:-----:|:--------:|:-----------------:|:-------:
