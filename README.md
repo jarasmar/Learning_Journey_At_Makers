@@ -1,4 +1,4 @@
-# Learning Journey
+# Learning Journey at Makers
 
 This is my learning journey at Makers Academy. I started the online precourse 20th January 2020 and the onsite course in London 17th February. Unfortunately the school had to close due to Coronavirus crisis and we moved to a fully remote course one month later. This was challenging but add an extra value too, as it made us focus on knowdledge sharing amongst our cohort, online collaboration and pairing, ecc. Finally, 7th of May, is time for our Final Project Fair, and we are ready to start a new journey on our own.
 
