@@ -15,7 +15,7 @@ Few weeks later, I went into a (non very successful) date that luckily introduce
 This is Spring 2019, my IT knowledge was reduced to restarting the laptop when it was not working properly. This Code thing sounds really scary. Am I really going to try? Yes.
 
 
-# Learning Journey at Makers
+## Learning Journey at Makers
 
 This is my learning journey at Makers Academy. I started the online precourse 20th January 2020 and the onsite course in London 17th February. Unfortunately the school had to close due to Coronavirus crisis and we moved to a fully remote course one month later. This was challenging but add an extra value too, as it made us focus on knowdledge sharing amongst our cohort, online collaboration and pairing, ecc. Finally, 7th of May, is time for our Final Project Fair, and we are ready to start a new journey on our own.
 
@@ -62,4 +62,4 @@ WEEK | GOALS | PROJECTS | WEEKEND CHALLENGE | JOURNAL
 7 | Further JavaScript | [Notes App](https://github.com/jarasmar/Notes_App) | [News Summary](https://github.com/jarasmar/news-summary-challenge) | [Read](Week-7.md)
 8-9 | Team Work | [Facebook Clone](https://github.com/jarasmar/acebook-theUndefinedMethod) | [Instagram Clone](https://github.com/jarasmar/instagram-challenge) | [Read](Week-8_9.md)
 10 | Individual Tech Test Practice | [Bank](https://github.com/jarasmar/Bank_Tech_Test) - [Gilded Rose](https://github.com/jarasmar/Gilded_Rose_Refactor_Ruby) | x | [Read](Week_10.md)
-11-12 | Team Final Project | [Free Project]() | x | [Read](Week_11_12.md)
+11-12 | Final Project: Mix Tape | [Mix Tape](https://github.com/jarasmar/mix-tape) | x | [Read](Week_11_12.md)
