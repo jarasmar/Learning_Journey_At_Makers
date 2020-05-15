@@ -1,4 +1,5 @@
 <br>
+
 # From Art to Code: Brief Tale of a Life Change
 
 While In high school I decided I wanted to be a doctor, chose all the scientific subjects and studied to get the higher grades to join the very selective Medicine Universities. I did it, the grades. But then I changed my mind and decided to study Fine Arts. 
@@ -16,6 +17,7 @@ Few weeks later, I went into a (non very successful) date that luckily introduce
 This is Spring 2019, my IT knowledge was reduced to restarting the laptop when it was not working properly. This Code thing sounds really scary. Am I really going to try? Yes.
 
 <br>
+
 ## Learning Journey at Makers
 
 This is my learning journey at Makers Academy. I started the online precourse 20th January 2020 and the onsite course in London 17th February. Unfortunately the school had to close due to Coronavirus crisis and we moved to a fully remote course one month later. This was challenging but add an extra value too, as it made us focus on knowdledge sharing amongst our cohort, online collaboration and pairing, ecc. Finally, 7th of May, is time for our Final Project Fair, and we are ready to start a new journey on our own.
