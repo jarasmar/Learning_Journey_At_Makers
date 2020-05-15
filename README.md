@@ -65,5 +65,4 @@ WEEK | GOALS | PROJECTS | WEEKEND CHALLENGE | JOURNAL
 7 | Further JavaScript | [Notes App](https://github.com/jarasmar/Notes_App) | [News Summary](https://github.com/jarasmar/news-summary-challenge) | [Read](Week-7.md)
 8-9 | Team Work | [Facebook Clone](https://github.com/jarasmar/acebook-theUndefinedMethod) | [Instagram Clone](https://github.com/jarasmar/instagram-challenge) | [Read](Week-8_9.md)
 10 | Individual Tech Test Practice | [Bank](https://github.com/jarasmar/Bank_Tech_Test) - [Gilded Rose](https://github.com/jarasmar/Gilded_Rose_Refactor_Ruby) | x | [Read](Week_10.md)
-11-12 | Team Final Project | [Free Project]() | x | [Read](Week_11_12.md)
 11-12 | Final Project: Mix Tape | [Mix Tape](https://github.com/jarasmar/mix-tape) | x | [Read](Week_11_12.md)
